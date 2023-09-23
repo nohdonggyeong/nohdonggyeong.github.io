@@ -1,0 +1,162 @@
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/datepicker.min.js"></script>
+<script src="{{ .Site.BaseURL }}/app.bundle.js"></script>
+
+<!-- typed.js -->
+<script src="{{ .Site.BaseURL }}/typed.min.js"></script>
+<script>
+const typed = document.getElementsByClassName("typed")
+if (typed) {
+    let typed_strings = typed[0].getAttribute("data-typed-items")
+    typed_strings = typed_strings.split(',')
+    new Typed('.typed', {
+    strings: typed_strings,
+    loop: true,
+    typeSpeed: 100,
+    backSpeed: 50,
+    backDelay: 2000
+    });
+}
+</script>
+
+<!-- Career & Education Select Box -->
+<script>
+function showDiv(element)
+{
+    document.getElementById("career").style.display = element.value == 'Career' ? 'block' : 'none';
+    document.getElementById("education").style.display = element.value == 'Education' ? 'block' : 'none';
+    document.getElementById("certificate").style.display = element.value == 'Certificate' ? 'block' : 'none';
+}
+</script>
+
+<!-- Abiliy Chart -->
+<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script>
+ var options = {
+    series: [{
+    name: 'Point',
+    data: [90, 70, 60, 80, 80, 100],
+}],
+    chart: {
+    height: 400,
+    type: 'radar',
+},
+title: {
+    // text: 'abiliy chart'
+},
+xaxis: {
+    categories: ['SW Design', 'Back-end Impl', 'DevOps', 'Communication', 'Agile Proficiency', 'Schedule Mgnt']
+}
+};
+
+var chart = new ApexCharts(document.querySelector("#chart"), options);
+chart.render();
+
+document.getElementsByClassName("apexcharts-toolbar")[0].style.display = "none";
+document.getElementsByClassName("apexcharts-text ")[0].style.display = "none";
+</script>
+
+<!-- vendor Enlarge Image : fancy box-->
+<script type="text/javascript" src="vendor/fancyBox-master/lib/jquery-1.10.2.min.js"></script>   <!-- Add jQuery library -->
+<script type="text/javascript" src="vendor/fancyBox-master/lib/jquery.mousewheel.pack.js"></script>  <!-- Add mousewheel plugin (this is optional) -->
+<script type="text/javascript" src="vendor/fancyBox-master/source/jquery.fancybox.pack.js"></script> <!-- Add fancyBox main JS files -->
+<script type="text/javascript"> // Simple image gallery. Uses default settings
+    $(document).ready(function () { $('.fancybox').fancybox(); });
+</script>
+
+<!-- onClick function: close menu -->
+<script>
+function closeMenu() {
+    if (screen.width <= 640) {
+    document.getElementById("toggleSidebarMobile").click();
+    }
+}
+</script>
+
+<!-- vendor: image swiper -->
+<script src="vendor/swiper/swiper-bundle.min.js"></script>
+<script>
+  new Swiper('.details-slider-1', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  new Swiper('.details-slider-2', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  new Swiper('.details-slider-3', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  new Swiper('.details-slider-4', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  new Swiper('.details-slider-5', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+
+  new Swiper('.details-slider-6', {
+    speed: 400,
+    loop: true,
+    autoplay: {
+      delay: (Math.floor(Math.random() * 4) + 2) * 1000,
+      disableOnInteraction: false
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    }
+  });
+</script>

@@ -1,0 +1,1295 @@
+---
+title: Portfolio - 노 동 경
+description: This is Donggyeong’s portfolio.
+layout: dashboard
+footer: true
+---
+<div class="px-6">
+    <a id="about-me" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
+    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-3">
+      <!-- About Me -->
+      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
+          <div class="flex-shrink-0">
+            <div class="w-full mb-4 sm:mb-0">
+              <span class="text-2xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">👋 About Me</span>
+            </div>
+          </div>
+        </div>
+        <p class="mb-2 text-xl font-medium text-gray-900 dark:text-white">
+          <h3 class="font-normal text-gray-500 dark:text-gray-400" style="margin-top: 1.5rem;">
+            <span class="text-base typed" data-typed-items=" 안녕하세요., Hello there."></span>
+          </h3>
+          <span class="text-lg text-green-500 dark:text-green-400">Back-end Developer</span>
+          <span class="text-lg mb-2 font-medium text-gray-900 dark:text-white">노동경입니다.</span>
+        </p>
+        <p class="mb-2 text-base font-medium text-gray-900 dark:text-white" style="margin-top: 1.5rem;">1. 웹 플랫폼, 자동화 툴 등을 만듭니다.</p>
+        <ul class="pl-4 mb-4 space-y-3 text-sm text-gray-500 list-disc dark:text-gray-400">
+          <li>주로 Java로 Spring Boot에서 JPA, Gradle를 사용하여 웹 플랫폼을 구축하는 프로젝트를 참여하였고, 다방면으로 플랫폼 구축 경험을 하였습니다.</li>
+          <li>기획, 설계부터 MVP 구현까지 Python 웹 프레임워크인 Django를 사용하여 AI 기능을 접목한 데이터 라벨링 웹사이트를 제작하였습니다.</li>
+        </ul>
+        <p class="mb-2 text-base font-medium text-gray-900 dark:text-white" style="margin-top: 1.5rem;">2. 탄탄한 설계를 가장 중요하게 생각합니다.</p>
+        <ul class="pl-4 mb-4 space-y-3 text-sm text-gray-500 list-disc dark:text-gray-400">
+          <li>제품의 완성도를 가장 중요하게 생각합니다. 일정을 잘 지키면서도 완성도를 높이기 위해서는 잘 짜여진 설계가 중요하다고 생각합니다.</li>
+          <li>저는 전체적인 흐름을 그려보고, 아키텍처를 설계하는 일이 좋아서, DevOps 방면으로 관심이 많습니다.</li>
+        </ul>
+        <p class="mb-2 text-base font-medium text-gray-900 dark:text-white" style="margin-top: 1.5rem;">3. 항상 기록하고 공유하는 것을 좋아합니다.</p>
+        <ul class="pl-4 mb-4 space-y-3 text-sm text-gray-500 list-disc dark:text-gray-400">
+          <li>간결하고 단순하게 개발하며 기록하고자 고민하는 편입니다.</li>
+          <li>쉽게 풀어 설명하고 공유하는 것이 결국 가장 빨리 학습하고 성장하는 길이라고 생각합니다.</li>
+        </ul>
+      </div>
+
+      <!-- Career & Etc -->
+      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        <h3 class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white" style="margin-top: 1rem;">📚 Career & Etc.</h3>
+        <div style="margin-top: 2rem;">
+          <select id="tabs" onchange="showDiv(this)" class="text-center bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-lg rounded-t-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
+              <option value="Career">Career</option>
+              <option value="Education">Education</option>
+              <option value="Certificate">Certificate</option>
+          </select>
+        </div>
+        <div id="fullWidthTabContent" class="border-t border-gray-200 dark:border-gray-600">
+            <div id="career" role="tabpanel" aria-labelledby="career-tab">
+              <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center min-w-0">
+                      <img class="flex-shrink-0 w-10" src="/images/career/s-core.png" alt="s-core image">
+                      <div class="ml-3">
+                        <p class="text-base font-medium text-gray-900 truncate dark:text-white">
+                          에스코어
+                        </p>
+                        <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                          개발플랫폼팀
+                          <span class="ml-1 text-gray-500">프로</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                      2023.04. - Now
+                    </div>
+                  </div>
+                </li>
+                <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center min-w-0">
+                      <img class="flex-shrink-0 w-10" src="/images/career/saltlux-innovation.png" alt="saltlux-innovation image">
+                      <div class="ml-3">
+                        <p class="text-base font-medium text-gray-900 truncate dark:text-white" style="max-width: 20vw; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                          솔트룩스이노베이션
+                        </p>
+                        <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                          SW개발팀
+                          <span class="ml-1 text-gray-500">주임</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                      2020.06. - 2023.01.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="hidden" id="education" role="tabpanel" aria-labelledby="education-tab">
+              <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center min-w-0">
+                      <img class="flex-shrink-0 w-7" src="/images/education/smartmedia.png" alt="smartmedia image">
+                      <div class="ml-3">
+                        <p class="text-base font-medium text-gray-900 truncate dark:text-white " style="max-width: 20vw; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">
+                          스마트미디어인재개발원
+                        </p>
+                        <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                          <span class="text-gray-500" style="max-width: 20vw; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">딥러닝기반에너지빅데이터응용SW전문가과정</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                      2019.12. - 2020.05.
+                    </div>
+                  </div>
+                </li>
+                <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center min-w-0">
+                      <img class="flex-shrink-0 w-7" src="/images/education/chonnam-university.png" alt="chonnam-university image">
+                      <div class="ml-3">
+                        <p class="text-base font-medium text-gray-900 truncate dark:text-white">
+                          전남대학교
+                        </p>
+                        <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                          <span class="text-gray-500" style="max-width: 20vw; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">산업공학(부:소프트웨어공학)</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                      2012.03. - 2017.02.
+                    </div>
+                  </div>
+                </li>
+                <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                  <div class="flex items-center justify-between">
+                    <div class="flex items-center min-w-0">
+                      <img class="flex-shrink-0 w-7" src="/images/education/samsung.png" alt="samsung image">
+                      <div class="ml-3">
+                        <p class="text-base font-medium text-gray-900 truncate dark:text-white">
+                          SCSC 트랙
+                        </p>
+                        <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                          <span class="text-gray-500" style="max-width: 20vw; text-overflow: ellipsis; white-space: nowrap; overflow: hidden;">삼성전자 X 전남대학교</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                      2014.03. - 2016.08.
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="hidden" id="certificate" role="tabpanel" aria-labelledby="certificate-tab">
+              <!--Carousel widget -->
+                <div id="carousel" class="relative" data-carousel="">
+                  <div class="relative mx-auto overflow-hidden" style="height: 19rem;">
+
+                      <div class="hidden duration-700 ease-in-out bg-white dark:bg-gray-800" data-carousel-item> 
+                        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center justify-between">
+                                <svg class="w-6 h-6 text-purple-600 dark:text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                                  <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+                                </svg>
+                                <div class="flex items-center min-w-0">
+                                  <div class="ml-3">
+                                    <p class="text-base font-medium text-gray-900 truncate dark:text-white ">
+                                      정보처리기사
+                                    </p>
+                                    <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                      <span class="text-gray-500 ">HRDK 한국산업인력공단</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                2019.05.
+                              </div>
+                            </div>
+                          </li>
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center justify-between">
+                                <svg class="w-6 h-6 text-purple-600 dark:text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                                  <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+                                </svg>
+                                <div class="flex items-center min-w-0">
+                                  <div class="ml-3">
+                                    <p class="text-base font-medium text-gray-900 truncate dark:text-white">
+                                      ADsP
+                                    </p>
+                                    <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                      <span class="text-gray-500 ">Kdata 한국데이터산업진흥원</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                2020.12.
+                              </div>
+                            </div>
+                          </li>
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center justify-between">
+                                <svg class="w-6 h-6 text-purple-600 dark:text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                                  <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+                                </svg>
+                                <div class="flex items-center min-w-0">
+                                  <div class="ml-3">
+                                    <p class="text-base font-medium text-gray-900 truncate dark:text-white">
+                                      SQLD
+                                    </p>
+                                    <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                      <span class="text-gray-500 ">Kdata 한국데이터산업진흥원</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                2020.06.
+                              </div>
+                            </div>
+                          </li>
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center justify-between">
+                                <svg class="w-6 h-6 text-purple-600 dark:text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                                  <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+                                </svg>
+                                <div class="flex items-center min-w-0">
+                                  <div class="ml-3">
+                                    <p class="text-base font-medium text-gray-900 truncate dark:text-white ">
+                                      네트워크관리사2급
+                                    </p>
+                                    <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                      <span class="text-gray-500 ">ICQA 한국정보통신자격협회</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                2022.04.
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                      <div class="hidden duration-700 ease-in-out bg-white dark:bg-gray-800" data-carousel-item> 
+                        <ul role="list" class="divide-y divide-gray-200 dark:divide-gray-700">
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center justify-between">
+                                <svg class="w-6 h-6 text-purple-600 dark:text-purple-600" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                                  <path fill="currentColor" d="m18.774 8.245-.892-.893a1.5 1.5 0 0 1-.437-1.052V5.036a2.484 2.484 0 0 0-2.48-2.48H13.7a1.5 1.5 0 0 1-1.052-.438l-.893-.892a2.484 2.484 0 0 0-3.51 0l-.893.892a1.5 1.5 0 0 1-1.052.437H5.036a2.484 2.484 0 0 0-2.48 2.481V6.3a1.5 1.5 0 0 1-.438 1.052l-.892.893a2.484 2.484 0 0 0 0 3.51l.892.893a1.5 1.5 0 0 1 .437 1.052v1.264a2.484 2.484 0 0 0 2.481 2.481H6.3a1.5 1.5 0 0 1 1.052.437l.893.892a2.484 2.484 0 0 0 3.51 0l.893-.892a1.5 1.5 0 0 1 1.052-.437h1.264a2.484 2.484 0 0 0 2.481-2.48V13.7a1.5 1.5 0 0 1 .437-1.052l.892-.893a2.484 2.484 0 0 0 0-3.51Z"/>
+                                  <path fill="#fff" d="M8 13a1 1 0 0 1-.707-.293l-2-2a1 1 0 1 1 1.414-1.414l1.42 1.42 5.318-3.545a1 1 0 0 1 1.11 1.664l-6 4A1 1 0 0 1 8 13Z"/>
+                                </svg>
+                                <div class="flex items-center min-w-0">
+                                  <div class="ml-3">
+                                    <p class="text-base font-medium text-gray-900 truncate dark:text-white ">
+                                      리눅스마스터2급
+                                    </p>
+                                    <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                      <span class="text-gray-500 ">KAIT 정보통신기술자격검정</span>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                2023.06.
+                              </div>
+                            </div>
+                          </li>
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center min-w-0">
+                                <div class="ml-3">
+                                  <p class="text-base font-medium text-gray-900 truncate dark:text-white ">
+                                    SW검정 Advanced
+                                  </p>
+                                  <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                    <span class="text-gray-500 ">멀티캠퍼스</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                Studying
+                              </div>
+                            </div>
+                          </li>
+                          <li class="py-3 sm:py-4 hover:bg-gray-50 dark:hover:bg-gray-600" style="padding-left: 0.5rem; padding-right: 0.5rem">
+                            <div class="flex items-center justify-between">
+                              <div class="flex items-center min-w-0">
+                                <div class="ml-3">
+                                  <p class="text-base font-medium text-gray-900 truncate dark:text-white ">
+                                    AWS Certified SAA
+                                  </p>
+                                  <div class="text-xs flex items-center flex-1 text-green-500 dark:text-green-400">
+                                    <span class="text-gray-500 ">aws</span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="text-sm inline-flex items-center font-semibold text-gray-900 dark:text-white">
+                                Studying
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </div>
+                  </div>
+                  
+                  <div class="flex items-center justify-center">
+                      <button type="button" class="flex items-center justify-center h-full mr-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                          <span class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M7.707 14.707a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 1.414L5.414 9H17a1 1 0 110 2H5.414l2.293 2.293a1 1 0 010 1.414z" clip-rule="evenodd"></path></svg>
+                              <span class="hidden">Previous</span>
+                          </span>
+                      </button>
+                      <button type="button" class="flex items-center justify-center h-full cursor-pointer group focus:outline-none" data-carousel-next>
+                          <span class="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200">
+                              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                              <span class="hidden">Next</span>
+                          </span>
+                      </button>
+                  </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    <a id="tech-stack" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
+    <div id="tech-stack" class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-3">
+      <!-- Ability -->
+      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        <div class="w-full">
+          <h3 class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white" style="margin-top: 1rem;">🎲 Dev Ability</h3>
+          <div id="chart"></div>
+        </div>
+        <div id="traffic-channels-chart" class="w-full"></div>
+      </div>
+
+      <!-- Tech Stack -->
+      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+        <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
+          <div class="flex-shrink-0">
+            <div class="w-full mb-4 sm:mb-0">
+              <span class="text-2xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">🕹️ Tech Stack</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col mt-6">
+          <div class="overflow-x-auto rounded-lg">
+            <div class="inline-block min-w-full align-middle">
+              <div class="overflow-hidden shadow sm:rounded-lg">
+                <table class="min-w-full divide-y divide-gray-200 dark:divide-gray-600">
+                  <thead class="bg-gray-50 dark:bg-gray-700">
+                    <tr>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-white">
+                        Category
+                      </th>
+                      <th scope="col" class="p-4 text-xs font-medium tracking-wider text-gray-500 uppercase dark:text-white">
+                        Technical Name
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td class="p-4 whitespace-nowrap text-center">
+                        <span class="bg-red-100 text-red-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-red-100 dark:border-red-400 dark:bg-gray-700 dark:text-red-400">Back-end</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400 sm:flex items-center" style="flex-wrap: wrap; justify-content: flex-start;">
+                        <span style="margin: 1rem;">Java</span>
+                        <span style="margin: 1rem;">Spring Boot</span>
+                        <span style="margin: 1rem;">SonarQube</span>
+                        <span style="margin: 1rem;">Python</span>
+                        <span style="margin: 1rem;">Django</span>
+                        <span style="margin: 1rem;">Gunicorn</span>
+                        <span style="margin: 1rem;">Nginx</span>
+                        <span style="margin: 1rem;">PostgreSQL</span>
+                        <span style="margin: 1rem;">Cubrid</span>
+                        <span style="margin: 1rem;">MariaDB</span>
+                        <span style="margin: 1rem;">Elastic Search</span>
+                        <span style="margin: 1rem;">Logstash</span>
+                        <span style="margin: 1rem;">Kibana</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td class="p-4 whitespace-nowrap text-center">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">DevOps</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400 sm:flex items-center" style="flex-wrap: wrap; justify-content: flex-start;">
+                        <span style="margin: 1rem;">Jenkins</span>
+                        <span style="margin: 1rem;">Docker</span>
+                        <span style="margin: 1rem;">Docker-compose</span>
+                        <span style="margin: 1rem;">Kubernetes</span>
+                        <span style="margin: 1rem;">CentOS</span>
+                        <span style="margin: 1rem;">Ubuntu</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td class="p-4 whitespace-nowrap text-center">
+                        <span class="bg-blue-100 text-blue-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-blue-100 dark:bg-gray-700 dark:border-blue-300 dark:text-blue-300">Collabo</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400 sm:flex items-center" style="flex-wrap: wrap; justify-content: flex-start;">
+                        <span style="margin: 1rem;">GitHub</span>
+                        <span style="margin: 1rem;">GitLab</span>
+                        <span style="margin: 1rem;">Jira</span>
+                        <span style="margin: 1rem;">Confluence</span>
+                        <span style="margin: 1rem;">Slack</span>
+                        <span style="margin: 1rem;">Microsoft Teams</span>
+                        <span style="margin: 1rem;">Mattermost</span>
+                      </td>
+                    </tr>
+                    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
+                      <td class="p-4 whitespace-nowrap text-center">
+                        <span class="bg-yellow-100 text-yellow-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-yellow-100 dark:bg-gray-700 dark:border-yellow-300 dark:text-yellow-300">Front-end</span>
+                      </td>
+                      <td class="p-4 text-sm font-normal text-gray-500 whitespace-nowrap dark:text-gray-400 sm:flex items-center" style="flex-wrap: wrap; justify-content: flex-start;">
+                        <span style="margin: 1rem;">HTML</span>
+                        <span style="margin: 1rem;">CSS</span>
+                        <span style="margin: 1rem;">Javascript</span>
+                        <span style="margin: 1rem;">JQuery</span>
+                        <span style="margin: 1rem;">Thymeleaf</span>
+                        <span style="margin: 1rem;">Vue.JS</span>
+                        <span style="margin: 1rem;">Tailwind</span>
+                        <span style="margin: 1rem;">Bootstrap</span>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a id="joined-project" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
+    <!-- Joined Project -->
+    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-1">
+      <div class="mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
+        <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
+          <div class="flex-shrink-0">
+            <div class="w-full mb-4 sm:mb-0">
+              <span class="text-2xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">🎯 Joined Project</span>
+            </div>
+          </div>
+        </div>
+        <div class="items-center mb-4" style="margin-top: 2rem;">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center min-w-0">
+              <img class="flex-shrink-0 w-10" src="/images/career/saltlux-innovation.png" alt="saltlux-innovation">
+              <div class="ml-3">
+                <h3 class="text-lg font-medium text-gray-900 truncate dark:text-white">
+                  솔트룩스이노베이션
+                </h3>
+                <div class="flex items-center justify-center">
+                  <span  class="text-xs text-green-500 dark:text-green-400">
+                    SW개발팀
+                  </span>
+                  <span  class="text-xs font-normal text-gray-500 dark:text-gray-40">
+                    에서 정부 과제, R&D 등 웹 개발
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="relative border-l border-gray-200 dark:border-gray-700">
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2022.06. - 2022.12.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              NIA 2022 인공지능 학습용 데이터 구축 사업
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 인터페이스(자판/음성)별 고빈도 오류 교정 데이터 수집 플랫폼 개발
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="errorcorrectionModal" data-modal-toggle="errorcorrectionModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-1 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/errorcorrection3.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/errorcorrection3.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/errorcorrection2.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/errorcorrection2.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="errorcorrectionModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            NIA 2022 인공지능 학습용 데이터 구축 사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="errorcorrectionModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          PC 키보드, 모바일 자판 종류마다 발생하는 오타 문장을 수집하여, AI 모델 개발 및 활용할 수 있도록 저작도구를 개발하고 및 데이터를 관리하는 프로젝트입니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          인수인계 받은 저작도구의 관리자 및 검수 페이지 추가 개발 및 유지보수를 진행하였습니다. (Spring Boot, Maven, Mybatis, Cubrid, Vue)
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2021.09. - 2021.12.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              AICA 2021 AI 시제품 제작지원사업
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 비대면 일자리 창출을 위한 크라우드소싱 서비스 플랫폼 개발
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="prototype21Modal" data-modal-toggle="prototype21Modal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-2 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/prototype21_1.PNG" data-fancybox-group="prototype21" title="AICA 2021 AI 시제품 제작지원사업">
+                      <img class="rounded-md" src="images/joined-project/prototype21_1.PNG" alt="AICA 2021 AI 시제품 제작지원사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/prototype21_2.JPG" data-fancybox-group="prototype21" title="AICA 2021 AI 시제품 제작지원사업">
+                      <img class="rounded-md" src="images/joined-project/prototype21_2.JPG" alt="AICA 2021 AI 시제품 제작지원사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="prototype21Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            AICA 2021 AI 시제품 제작지원사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="prototype21Modal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          크라우드소싱 서비스를 관리할 수 있는 플랫폼을 제작. 회원, 데이터, 저작독, AI모델, 비용, 문서자동화를 관리하는 기능이 필요한 프로젝트였습니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          플랫폼 관리자 기능으로 회원관리, 비용관리 등의 페이지를 개발하였습니다. (ver1: Docker-Compose, 전자정부프레임워크, Apache Tomcat, MariaDB 구성 & ver2: Spring Boot, jqGrid, Mybatis, Cubrid 구성)
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2021.05. - 2021.12.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              NIA 2021 인공지능 학습용 데이터 구축 사업
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 차량 내외부 상황인식 데이터 수집 플랫폼 개발
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="vehicleModal" data-modal-toggle="vehicleModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-3 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/vehicle1.png" data-fancybox-group="vehicle" title="NIA 2021 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/vehicle1.png" alt="NIA 2021 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/vehicle3.png" data-fancybox-group="vehicle" title="NIA 2021 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/vehicle3.png" alt="NIA 2021 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="vehicleModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            NIA 2021 인공지능 학습용 데이터 구축 사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="vehicleModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          운전자 제스처를 통해 손쉽게 차량 기능을 사용할 수 있는 AI모델을 개발하기 위해, 수집한 영상 데이터 저작도구를 개발하고 수집한 데이터를 관리하는 프로젝트였습니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          저작도구 설계, 구현, 유지보수 등 전체 과정을 구현하였습니다. (Docker-Compose 활용, Django + Nginx + Gunicorn + MariaDB 구성, MediaPipe Handpose AI 모델 + Javascript  메인 기능 구현)                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2020.09. - 2020.12.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              NIA 2020 인공지능 학습용 데이터 구축 사업
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 폐암 예후 예측을 위한 AI데이터 수집 플랫폼 개발
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="clinomicsModal" data-modal-toggle="clinomicsModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-4 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/clinomics4.PNG" data-fancybox-group="clinomics" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/clinomics4.PNG" alt="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/clinomics2.PNG" data-fancybox-group="clinomics" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/clinomics2.PNG" alt="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="clinomicsModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            NIA 2020 인공지능 학습용 데이터 구축 사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="clinomicsModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          폐암 환자의 PET 및 CT 영상데이터, 임상정보, 유전자 변이 데이터를 근거로 폐암 예후 예측하는 AI 모델 개발을 위해 저작도구를 개발하고, 데이터 관리를 관리하는 프로젝트였습니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          저작도구 작업 페이지 중 이미지 가져오기, 드래그, 확대∙축소∙회전 등의 UI (Javascript, Canvas) 및 라벨링 작업 기능을 구현하였습니다. (Docker-Compose, Django + Nginx + Gunicorn + Postgresql)
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2020.09. - 2020.12.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              AICA 2020 AI 시제품 제작 지원사업
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 인공지능 심층질의응답 기반의 디지털휴먼 제품 개발
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="prototype20Modal" data-modal-toggle="prototype20Modal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-6 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/prototype20_1.png" data-fancybox-group="prototype20" title="AICA 2020 AI 시제품 제작 지원사업">
+                      <img class="rounded-md" src="images/joined-project/prototype20_1.png" alt="AICA 2020 AI 시제품 제작 지원사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/prototype20_2.png" data-fancybox-group="prototype20" title="AICA 2020 AI 시제품 제작 지원사업">
+                      <img class="rounded-md" src="images/joined-project/prototype20_2.png" alt="AICA 2020 AI 시제품 제작 지원사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="prototype20Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            AICA 2020 AI 시제품 제작 지원사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="prototype20Modal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          STT, TTS, 자연어 처리, 객체 인식 AI모델을 활용하여 터치스크린에서 대화 서비스를 제공하는 디지털 휴먼 서비스를 구현하였습니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          추후 사업 활용을 위한 연구 수행으로 디지털휴먼 기술 내재화를 담당하였습니다. (Tacotron2 TTS 기능 구현, FFMPEG 문장단위 자동 분할 및 편집 기능 개발)
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+
+    <a id="side-project" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
+    <!-- Side Project -->
+    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-1">
+      <div class="mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
+        <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
+          <div class="flex-shrink-0">
+            <div class="w-full mb-4 sm:mb-0">
+              <span class="text-2xl font-bold leading-none text-gray-900 sm:text-2xl dark:text-white">🚀 Side Project</span>
+            </div>
+          </div>
+        </div>
+        <ol class="relative border-l border-gray-200 dark:border-gray-700" style="margin-top: 2rem;">
+          <li class="mb-10 ml-4">
+              <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+              <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2022.12. - 2023.01.</time>
+              <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+                TTS 학습용 음성데이터 수집 툴
+              </h3>
+              <div>
+                <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                  ✨ 스크립트를 보고 녹음을 하고, 사용자 권한을 분리하여 검수 관리하는 툴입니다.
+                </p>
+                <p class="mb-1 text-base font-normal text-green-500" data-modal-target="defaultModal" data-modal-toggle="defaultModal" style="cursor: pointer;">
+                  🔎 자세히 보기
+                </p>
+              </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-1 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/side-project/voicecollector1.PNG" data-fancybox-group="voicecollector" title="TTS 학습용 음성데이터 수집 툴">
+                      <img class="rounded-md" src="images/side-project/voicecollector1.PNG" alt="TTS 학습용 음성데이터 수집 툴">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/side-project/voicecollector2.PNG" data-fancybox-group="voicecollector" title="TTS 학습용 음성데이터 수집 툴">
+                      <img class="rounded-md" src="images/side-project/voicecollector2.PNG" alt="TTS 학습용 음성데이터 수집 툴">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/side-project/voicecollector3.PNG" data-fancybox-group="voicecollector" title="TTS 학습용 음성데이터 수집 툴">
+                      <img class="rounded-md" src="images/side-project/voicecollector3.PNG" alt="TTS 학습용 음성데이터 수집 툴">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            <!-- Main modal -->
+            <div id="defaultModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            TTS 학습용 음성데이터 수집 툴
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="defaultModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          제작 의도
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          TTS 모델 개발을 위해 좋은 마이크만 준비되면 크라우드 소싱 등의 형태로 음성데이터 수집 진행이 어렵지 않다고 생각했습니다. 스크립트를 보고 녹음을 하고, 사용자 권한을 분리하여 검수 관리하도록 만들었습니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          구현 사항
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          Docker-compose, Spring Boot, Gradle, JPA, Mariadb, Spring Security, Thymeleaf, Bootstrap, Javascript, FFMPEG, Certbot을 사용하였으며, 대본 등록, 녹음작업, 검수작업, 회원관리 기능을 구현하였습니다.
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <video width="100%" controls>
+                          <source src="videos/voicecollector.mp4" type="video/mp4">
+                          비디오가 로딩되지 않았습니다.
+                        </video>
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2022.01. - 2022.02.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              팀 HR관리 플랫폼
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 사내 그룹웨어에 미포함된 계약직의 연장근로, 연차 관리를 위한 Web Platform입니다.
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="niceworkModal" data-modal-toggle="niceworkModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+          <div style="margin-top: 1rem;">
+            <div class="details-slider details-slider-2 swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/nicework.png" data-fancybox-group="nicework" title="팀 HR관리 플랫폼">
+                    <img class="rounded-md" src="images/side-project/nicework.png" alt="팀 HR관리 플랫폼">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/nicework2.png" data-fancybox-group="nicework" title="팀 HR관리 플랫폼">
+                    <img class="rounded-md" src="images/side-project/nicework2.png" alt="팀 HR관리 플랫폼">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- Main modal -->
+          <div id="niceworkModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                          팀 HR관리 플랫폼
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="niceworkModal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-2">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        제작 의도
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        그룹웨어로 관리 되지 않는 계약직 인원들을 팀원으로 관리하는 입장에서 HR 관련 기록, 조회 기능이 엑셀만으로는 공유 및 활용이 부족하다는 생각이 들었습니다.
+                      </p>
+                      <br/>
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        구현 사항
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        Docker-compose, Djagno, Nginx, Gunicorn, Postgresql, Certbot을 사용하였으며, 일일업무, 연장근로, 휴가관리, 계정관리, 한글 및 엑셀 파일 다운로드 기능을 구현하였습니다.
+                      </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <video width="100%" controls>
+                        <source src="videos/nicework.mp4" type="video/mp4">
+                        비디오가 로딩되지 않았습니다.
+                      </video>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2021.09. - 2021.10.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              레크레이션 인물 퀴즈 앱
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ Saltlux 본사와 광주, 울산 지사 통합 워크샵 진행 시 활용한 레크레이션 자료입니다.
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="recreationModal" data-modal-toggle="recreationModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+          <div style="margin-top: 1rem;">
+            <div class="details-slider details-slider-3 swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/recreation1.png" data-fancybox-group="recreation" title="레크레이션 인물 퀴즈 앱">
+                    <img class="rounded-md" src="images/side-project/recreation1.png" alt="레크레이션 인물 퀴즈 앱">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/recreation2.png" data-fancybox-group="recreation" title="레크레이션 인물 퀴즈 앱">
+                    <img class="rounded-md" src="images/side-project/recreation2.png" alt="레크레이션 인물 퀴즈 앱">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- Main modal -->
+          <div id="recreationModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                          레크레이션 인물 퀴즈 앱
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="recreationModal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-2">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        제작 의도
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        Saltlux 본사와 광주, 울산 지사 통합 워크샵 진행 시 활용한 레크레이션 자료입니다. 레크레이션 사회자로 역할 수행 시 다 함께 참여할 수 있는 게임을 생각하다 만들게 되었습니다.
+                      </p>
+                      <br/>
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        구현 사항
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        PyQt로 화면과 버튼을 GUI를 구성, Pyinstaller로 exe파일을 만들어 활용했습니다.
+                      </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <video width="100%" controls>
+                        <source src="videos/recreation.mp4" type="video/mp4">
+                        비디오가 로딩되지 않았습니다.
+                      </video>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2021.06. - 2021.07.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              회사 장비 관리 플랫폼
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ 회사의 장비 수량 및 사용 현황을 파악하과 관리하기 위한 플랫폼입니다.
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="eqpmngtModal" data-modal-toggle="eqpmngtModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+          <div style="margin-top: 1rem;">
+            <div class="details-slider details-slider-4 swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/eqpmngt1.PNG" data-fancybox-group="eqpmngt" title="회사 장비 관리 플랫폼">
+                    <img class="rounded-md" src="images/side-project/eqpmngt1.PNG" alt="회사 장비 관리 플랫폼">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/eqpmngt2.png" data-fancybox-group="eqpmngt" title="회사 장비 관리 플랫폼">
+                    <img class="rounded-md" src="images/side-project/eqpmngt2.png" alt="회사 장비 관리 플랫폼">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- Main modal -->
+          <div id="eqpmngtModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                          회사 장비 관리 플랫폼
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="eqpmngtModal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-2">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        제작 의도
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        회사 장비 관리를 부업무로 담당하게 된 뒤, Excel로는 정보 동기화가 어려웠고 직원들이 직접 접속하여 본인 장비 현황을 파악하고 변경 요청을 할 수 있게 하고 싶었습니다.
+                      </p>
+                      <br/>
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        구현 사항
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        Docker-compose를 활용하여 Django, Nginx, Gunicorn, MariaDB를 연동하고 장비의 추가, 삭제, 조회, 사용 현황 파악을 용이하게 기능을 구현하였습니다.
+                      </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                      <video width="100%" controls>
+                        <source src="videos/eqpmngt.mp4" type="video/mp4">
+                        비디오가 로딩되지 않았습니다.
+                      </video>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2020.05. - 2020.06.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              Say List
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ Google STT를 활용한 캘린더 및 메모 관리 Android App
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="sayListModal" data-modal-toggle="sayListModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+          <div style="margin-top: 1rem;">
+            <div class="details-slider details-slider-5 swiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/sayList.jpg" data-fancybox-group="sayList" title="TTS 학습용 음성데이터 수집 툴">
+                    <img class="rounded-md" src="images/side-project/sayList.jpg" alt="TTS 학습용 음성데이터 수집 툴">
+                  </a>
+                </div>
+                <div class="swiper-slide">
+                  <a class="fancybox" href="images/side-project/voiceMemo.jpg" data-fancybox-group="sayList" title="TTS 학습용 음성데이터 수집 툴">
+                    <img class="rounded-md" src="images/side-project/voiceMemo.jpg" alt="TTS 학습용 음성데이터 수집 툴">
+                  </a>
+                </div>
+              </div>
+              <div class="swiper-pagination"></div>
+            </div>
+          </div>
+          <!-- Main modal -->
+          <div id="sayListModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+            <div class="relative w-full max-w-2xl max-h-full">
+                <!-- Modal content -->
+                <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                    <!-- Modal header -->
+                    <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                        <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                          Say List
+                        </h3>
+                        <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="sayListModal">
+                            <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                            </svg>
+                            <span class="sr-only">Close modal</span>
+                        </button>
+                    </div>
+                    <!-- Modal body -->
+                    <div class="p-6 space-y-2">
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        제작 의도
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        저만의 어플을 만들어보고 싶었고, 평소 키패드에서 오타가 많이 발생했고 귀찮음이 컸던 상황에서 버튼을 누르고 녹음하는 형식의 To Do List를 만들고 싶었습니다. 좌측 영상은 <b>Say List</b> (STT + Calendar), 우측 영상은 <b>Voice Meno</b> (STT + Memo) 앱 동작을 설명합니다.</p>
+                      </p>
+                      <br/>
+                      <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                        구현 사항
+                      </span>
+                      <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                        <span>
+                          구글 음성 API (SpeechREcognizer)를 활용하여 STT 기능을 가진 서비스를 제작해보았습니다. 인식한 음성은 텍스트로 변환되며, 캘린더 상에 해당하는 날짜로 일정을 등록할 수 있도록 설계하였습니다. 데이터베이스는 안드로이드 내장 SQLite를 사용하였으고, 등록한 일정의 수정 및 삭제 기능을 추가하였습니다. 구글플레이 링크는 다음과 같습니다.
+                        </span>
+                        <span>(</span>
+                        <span class="text-sm leading-relaxed text-green-500"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.androidcode.voicecalendar">Say List link</a></span>
+                        <span>, </span>
+                        <span class="text-sm leading-relaxed text-green-500"><a target="_blank" href="https://play.google.com/store/apps/details?id=com.androidCode.voicememo">Voice Memo link</a></span>
+                        <span>)</span>
+                      </p>
+                    </div>
+                    <!-- Modal footer -->
+                    <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600 justify-center">
+                      <video width="40%" controls>
+                        <source src="videos/saylist.mp4" type="video/mp4">
+                        비디오가 로딩되지 않았습니다.
+                      </video>
+        
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      <video width="40%"  controls>
+                        <source src="videos/voicememo.mp4" type="video/mp4">
+                        비디오가 로딩되지 않았습니다.
+                      </video>
+                    </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2020.06. - 2020.06.</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              My First Web Portfolio
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ IT 직무 첫 취업 웹 포트폴리오입니다.
+              </p>
+              <a class="mb-1 text-base font-normal text-green-500" target="_blank" href="portfolio_ver1.html" style="cursor: pointer;">
+                🔎 자세히 보기
+              </a>
+            </div>
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-6 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/side-project/portfolio_ver1_img.PNG" data-fancybox-group="portfolio_ver1" title="My First Web Portfolio">
+                      <img class="rounded-md" src="images/side-project/portfolio_ver1_img.PNG" alt="My First Web Portfolio">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+</div>
