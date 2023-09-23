@@ -166,9 +166,9 @@
     <main>
       <div class="px-6">
     <a id="about-me" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
-    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-3">
+    <div class="grid grid-cols-1 2xl:grid-cols-3">
       <!-- About Me -->
-      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+      <div class="content mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
         <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
           <div class="flex-shrink-0">
             <div class="w-full mb-4 sm:mb-0">
@@ -201,7 +201,7 @@
       </div>
 
       <!-- Career & Etc -->
-      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+      <div class="content mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
         <h3 class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white" style="margin-top: 1rem;">📚 Career & Etc.</h3>
         <div style="margin-top: 2rem;">
           <select id="tabs" onchange="showDiv(this)" class="text-center bg-gray-50 border-0 border-b border-gray-200 text-gray-900 text-lg rounded-t-lg focus:ring-primary-500 focus:border-primary-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-primary-500 dark:focus:border-primary-500">
@@ -496,9 +496,9 @@
     </div>
 
     <a id="tech-stack" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
-    <div id="tech-stack" class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-3">
+    <div class="grid grid-cols-1 2xl:grid-cols-3">
       <!-- Ability -->
-      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+      <div class="content mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800">
         <div class="w-full">
           <h3 class="flex items-center mb-4 text-2xl font-semibold text-gray-900 dark:text-white" style="margin-top: 1rem;">🎲 Dev Ability</h3>
           <div id="chart"></div>
@@ -507,7 +507,7 @@
       </div>
 
       <!-- Tech Stack -->
-      <div class="mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
+      <div class="content mt-6 p-4 bg-white border border-gray-200 rounded-lg shadow-sm 2xl:col-span-2 dark:border-gray-700 sm:p-6 dark:bg-gray-800">
         <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
           <div class="flex-shrink-0">
             <div class="w-full mb-4 sm:mb-0">
@@ -603,9 +603,9 @@
     </div>
 
     <a id="joined-project" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
-    <!-- Joined Project -->
-    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-1">
-      <div class="mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
+    <div class="grid grid-cols-1 2xl:grid-cols-1">
+      <!-- Joined Project -->
+      <div class="content mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
         <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
           <div class="flex-shrink-0">
             <div class="w-full mb-4 sm:mb-0">
@@ -613,6 +613,106 @@
             </div>
           </div>
         </div>
+        <div class="items-center mb-4" style="margin-top: 2rem;">
+          <div class="flex items-center justify-between">
+            <div class="flex items-center min-w-0">
+              <img class="flex-shrink-0 w-10" src="https://nohdonggyeong.github.io/images/career/s-core.png" alt="s-core image">
+              <div class="ml-3">
+                <h3 class="text-lg font-medium text-gray-900 truncate dark:text-white">
+                  에스코어
+                </h3>
+                <div class="flex items-center justify-center">
+                  <span  class="text-xs text-green-500 dark:text-green-400">
+                    개발플랫폼팀
+                  </span>
+                  <span  class="text-xs font-normal text-gray-500 dark:text-gray-40">
+                    에서 기업내부 SW자산 재사용 플랫폼의 백엔드 개발 수행
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="relative border-l border-gray-200 dark:border-gray-700">
+          <li class="mb-10 ml-4">
+            <div class="absolute w-3 h-3 bg-gray-200 rounded-full mt-1.5 -left-1.5 border border-white dark:border-gray-800 dark:bg-gray-700"></div>
+            <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">2023.04. - Now</time>
+            <h3 class="mb-2 text-lg font-semibold text-gray-900 dark:text-white">
+              Catalog Platform
+            </h3>
+            <div>
+              <p class="mb-1 text-base font-normal text-gray-500 dark:text-gray-400">
+                ✨ SW 재사용 자산의 라이프사이클을 관리하고, 검색 및 추천 기능을 제공하여 자산 활용도를 높일 수 있는 플랫폼 개발에 참여하였습니다.
+              </p>
+              <p class="mb-1 text-base font-normal text-green-500" data-modal-target="catalogModal" data-modal-toggle="catalogModal" style="cursor: pointer;">
+                🔎 자세히 보기
+              </p>
+            </div>
+            <!--
+            <div style="margin-top: 1rem;">
+              <div class="details-slider details-slider-1 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/errorcorrection3.png" data-fancybox-group="errorcorrection-main" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/errorcorrection3.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/errorcorrection2.png" data-fancybox-group="errorcorrection-main" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/errorcorrection2.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
+            </div>
+            -->
+            <!-- Main modal -->
+            <div id="catalogModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+              <div class="relative w-full max-w-2xl max-h-full">
+                  <!-- Modal content -->
+                  <div class="relative bg-white rounded-lg shadow dark:bg-gray-700">
+                      <!-- Modal header -->
+                      <div class="flex items-start justify-between p-4 border-b rounded-t dark:border-gray-600">
+                          <h3 class="text-lg font-semibold text-gray-900 dark:text-white">
+                            NIA 2022 인공지능 학습용 데이터 구축 사업
+                          </h3>
+                          <button type="button" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm w-8 h-8 ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white" data-modal-hide="catalogModal">
+                              <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                              </svg>
+                              <span class="sr-only">Close modal</span>
+                          </button>
+                      </div>
+                      <!-- Modal body -->
+                      <div class="p-6 space-y-2">
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          상세 설명
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          Catalog 플랫폼은 산재된 IT 자산을 분류, 축적 및 재사용하여, 개발/운영 효율 향상을 위한 IT 자산 유통체계를 지원합니다. Catalog lifecycle과 연동된 API management를 제공하고 기준 정보의 유통, 빅데이터 분석을 위한 데이터 수집 등의 서비스를 제공합니다.
+                        </p>
+                        <br/>
+                        <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
+                          참여 내용
+                        </span>
+                        <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
+                          Spring Boot, Maven, Jpa, Swagger, Postgresql를 활용하여 API 기능을 구현하였고, 테스트 코드를 작성하였습니다. SonarQube를 사용해서 정적 코드 품질을 관리하고 Java의 Clean Code에 대해 많이 배우게 되었습니다. 코어 엔진을 맡아 Spring Boot 2버전을 3버전대로 마이그레이션도 진행해보고 scouter, burpsuite를 사용 해 모의 해킹 검증 대응도 경험하였습니다.
+                        </p>
+                      </div>
+                      <!-- Modal footer -->
+                      <!--
+                      <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
+                        <a class="fancybox" href="images/joined-project/errorcorrection4.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
+                          <img class="rounded-md" src="images/joined-project/errorcorrection4.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
+                        </a>
+                      </div>
+                      -->
+                  </div>
+              </div>
+            </div>
+          </li>
+        </ol>
         <div class="items-center mb-4" style="margin-top: 2rem;">
           <div class="flex items-center justify-between">
             <div class="flex items-center min-w-0">
@@ -626,7 +726,7 @@
                     SW개발팀
                   </span>
                   <span  class="text-xs font-normal text-gray-500 dark:text-gray-40">
-                    에서 정부 과제, R&D 등 웹 개발
+                    에서 정부 과제, R&D 등 풀스택 개발 수행
                   </span>
                 </div>
               </div>
@@ -692,7 +792,7 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          참여 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                           인수인계 받은 저작도구의 관리자 및 검수 페이지 추가 개발 및 유지보수를 진행하였습니다. (Spring Boot, Maven, Mybatis, Cubrid, Vue)
@@ -766,7 +866,7 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          참여 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                           플랫폼 관리자 기능으로 회원관리, 비용관리 등의 페이지를 개발하였습니다. (ver1: Docker-Compose, 전자정부프레임워크, Apache Tomcat, MariaDB 구성 & ver2: Spring Boot, jqGrid, Mybatis, Cubrid 구성)
@@ -840,15 +940,15 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          참여 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
-                          저작도구 설계, 구현, 유지보수 등 전체 과정을 구현하였습니다. (Docker-Compose 활용, Django + Nginx + Gunicorn + MariaDB 구성, MediaPipe Handpose AI 모델 + Javascript  메인 기능 구현)                        </p>
+                          저작도구 설계, 구현, 유지보수 등 전체 과정을 참여하였습니다. (Docker-Compose 활용, Django + Nginx + Gunicorn + MariaDB 구성, MediaPipe Handpose AI 모델 + Javascript  메인 기능 구현)                        </p>
                       </div>
                       <!-- Modal footer -->
                       <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <a class="fancybox" href="images/joined-project/errorcorrection4.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
-                          <img class="rounded-md" src="images/joined-project/errorcorrection4.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
+                        <a class="fancybox" href="images/joined-project/vehicle6.png" data-fancybox-group="vehicle" title="NIA 2021 인공지능 학습용 데이터 구축 사업">
+                          <img class="rounded-md" src="images/joined-project/vehicle6.png" alt="NIA 2021 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
                         </a>
                       </div>
                   </div>
@@ -870,9 +970,21 @@
               </p>
             </div>
             <div style="margin-top: 1rem;">
-              <a class="fancybox" href="images/joined-project/clinomics2.PNG" data-fancybox-group="clinomics-main" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
-                <img class="rounded-md" src="images/joined-project/clinomics2.PNG" alt="NIA 2020 인공지능 학습용 데이터 구축 사업" style="margin: 0 auto;">
-              </a>
+              <div class="details-slider details-slider-3 swiper">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/clinomics2.PNG" data-fancybox-group="clinomics-main" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/clinomics2.PNG" alt="NIA 2020 인공지능 학습용 데이터 구축 사업" style="margin: 0 auto;">
+                    </a>
+                  </div>
+                  <div class="swiper-slide">
+                    <a class="fancybox" href="images/joined-project/clinomics3.PNG" data-fancybox-group="clinomics-main" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                      <img class="rounded-md" src="images/joined-project/clinomics3.PNG" alt="NIA 2020 인공지능 학습용 데이터 구축 사업" style="margin: 0 auto;">
+                    </a>
+                  </div>
+                </div>
+                <div class="swiper-pagination"></div>
+              </div>
             </div>
             <!-- Main modal -->
             <div id="clinomicsModal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -901,16 +1013,16 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          참여 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
-                          저작도구 작업 페이지 중 이미지 가져오기, 드래그, 확대∙축소∙회전 등의 UI (Javascript, Canvas) 및 라벨링 작업 기능을 구현하였습니다. (Docker-Compose, Django + Nginx + Gunicorn + Postgresql)
+                          프론트 단의  코어 기능을 구현하였습니다. 저작도구의 작업 페이지 중 이미지 가져오기, 드래그, 확대∙축소∙회전 등의 UI (Javascript, Canvas) 및 라벨링 작업 기능을 구현하였습니다. (Docker-Compose, Django + Nginx + Gunicorn + Postgresql)
                         </p>
                       </div>
                       <!-- Modal footer -->
                       <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <a class="fancybox" href="images/joined-project/errorcorrection4.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
-                          <img class="rounded-md" src="images/joined-project/errorcorrection4.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
+                        <a class="fancybox" href="images/joined-project/clinomics4.png" data-fancybox-group="clinomics" title="NIA 2020 인공지능 학습용 데이터 구축 사업">
+                          <img class="rounded-md" src="images/joined-project/clinomics4.png" alt="NIA 2020 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
                         </a>
                       </div>
                   </div>
@@ -930,11 +1042,6 @@
               <p class="mb-1 text-base font-normal text-green-500" data-modal-target="prototype20Modal" data-modal-toggle="prototype20Modal" style="cursor: pointer;">
                 🔎 자세히 보기
               </p>
-            </div>
-            <div style="margin-top: 1rem; ">
-              <a class="fancybox" href="images/joined-project/prototype20_3.jpg" data-fancybox-group="prototype20-main" title="AICA 2020 AI 시제품 제작 지원사업">
-                <img class="rounded-md" src="images/joined-project/prototype20_3.jpg" alt="AICA 2020 AI 시제품 제작 지원사업" style="margin: 0 auto;">
-              </a>
             </div>
             <!-- Main modal -->
             <div id="prototype20Modal" tabindex="-1" aria-hidden="true" class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -963,16 +1070,16 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          참여 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
-                          Ubuntu에서 기업 TTS, STT, Talkbot 솔루션 활용 및 브로커 서버 관리를 담당하였습니다. 그리고 추후 사업 활용을 위해 연구 수행으로 Tacotron2 오픈소스 활용 TTS 기능 구현 및 Python으로 FFMPEG 문장단위 자동 분할 및 편집 모듈 개발 등의 디지털휴먼 기술 내재화를 수행하였습니다.
+                          Ubuntu에서 기업 TTS, STT, Talkbot 솔루션 및 Broker 활용 및 운영 서버 관리를 담당하였습니다. 그리고 추후 사업 활용을 위해 연구 수행으로 Tacotron2 오픈소스 활용 TTS 기능 구현 및 Python으로 FFMPEG 문장단위 자동 분할 및 편집 모듈 개발 등의 디지털휴먼 기술 내재화를 수행하였습니다.
                         </p>
                       </div>
                       <!-- Modal footer -->
                       <div class="flex items-center p-6 space-x-2 border-t border-gray-200 rounded-b dark:border-gray-600">
-                        <a class="fancybox" href="images/joined-project/errorcorrection4.png" data-fancybox-group="errorcorrection" title="NIA 2022 인공지능 학습용 데이터 구축 사업">
-                          <img class="rounded-md" src="images/joined-project/errorcorrection4.png" alt="NIA 2022 인공지능 학습용 데이터 구축 사업" style="max-width: 100%; margin: 0 auto;">
+                        <a class="fancybox" href="images/joined-project/prototype20_2.png" data-fancybox-group="prototype20" title="AICA 2020 AI 시제품 제작 지원사업">
+                          <img class="rounded-md" src="images/joined-project/prototype20_2.png" alt="AICA 2020 AI 시제품 제작 지원사업" style="max-width: 100%; margin: 0 auto;">
                         </a>
                       </div>
                   </div>
@@ -982,11 +1089,11 @@
         </ol>
       </div>
     </div>
-
+  
     <a id="side-project" style="display: block; position: relative; top: -4rem; visibility: hidden;"></a>
-    <!-- Side Project -->
-    <div class="mt-2 grid gap-6 grid-cols-1 2xl:grid-cols-1">
-      <div class="mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
+    <div class="grid grid-cols-1 2xl:grid-cols-1">
+      <!-- Side Project -->
+      <div class="content mt-6 p-4  mb-4 bg-white border border-gray-200 rounded-lg shadow-sm dark:border-gray-700 sm:p-6 dark:bg-gray-800 xl:mb-0">
         <div class="flex items-center justify-between mb-4" style="margin-top: 1rem;">
           <div class="flex-shrink-0">
             <div class="w-full mb-4 sm:mb-0">
@@ -1058,7 +1165,7 @@
                         </p>
                         <br/>
                         <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                          구현 사항
+                          구현 내용
                         </span>
                         <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                           Docker-compose, Spring Boot, Gradle, JPA, Mariadb, Spring Security, Thymeleaf, Bootstrap, Javascript, FFMPEG, Certbot을 사용하였으며, 대본 등록, 녹음작업, 검수작업, 회원관리 기능을 구현하였습니다.
@@ -1134,7 +1241,7 @@
                       </p>
                       <br/>
                       <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                        구현 사항
+                        구현 내용
                       </span>
                       <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                         Docker-compose, Djagno, Nginx, Gunicorn, Postgresql, Certbot을 사용하였으며, 일일업무, 연장근로, 휴가관리, 계정관리, 한글 및 엑셀 파일 다운로드 기능을 구현하였습니다.
@@ -1210,7 +1317,7 @@
                       </p>
                       <br/>
                       <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                        구현 사항
+                        구현 내용
                       </span>
                       <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                         PyQt로 화면과 버튼을 GUI를 구성, Pyinstaller로 exe파일을 만들어 활용했습니다.
@@ -1286,7 +1393,7 @@
                       </p>
                       <br/>
                       <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                        구현 사항
+                        구현 내용
                       </span>
                       <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                         Docker-compose를 활용하여 Django, Nginx, Gunicorn, MariaDB를 연동하고 장비의 추가, 삭제, 조회, 사용 현황 파악을 용이하게 기능을 구현하였습니다.
@@ -1362,7 +1469,7 @@
                       </p>
                       <br/>
                       <span class="bg-green-100 text-green-800 text-xs font-medium mr-2 px-2.5 py-0.5 rounded-md border border-green-100 dark:bg-gray-700 dark:border-green-300 dark:text-green-300">
-                        구현 사항
+                        구현 내용
                       </span>
                       <p class="text-sm leading-relaxed text-gray-500 dark:text-gray-200">
                         <span>

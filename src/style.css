@@ -232,3 +232,10 @@
 .details-slider .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #34b7a7;
 }
+
+/* content gap */
+@media (min-width: 640px) {
+  .content {
+    margin-right: 1.25rem;
+  }
+}
