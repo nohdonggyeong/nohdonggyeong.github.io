@@ -195,20 +195,18 @@
   }
 }
 */
-@media (min-width: 640px) {
-  .fancybox img {
-    max-height: 30vh;
-    border-radius: 0.4rem;
-    border: 0.1rem solid#D3D3D3;
-    margin: 0.4rem; 
-  }
+.fancybox img {
+  border-radius: 0.4rem;
+  border: 0.1rem solid#D3D3D3;
+  margin: 0.4rem; 
 }
-@media (max-width: 640px) {
-  .fancybox img {
-    border-radius: 0.4rem;
-    border: 0.1rem solid#D3D3D3;
-    margin: 0.4rem; 
-  }
+
+.image-large {
+  max-height: 38vw;
+}
+
+.image-small {
+  max-height: 18vw;
 }
 
 /* image slider */
