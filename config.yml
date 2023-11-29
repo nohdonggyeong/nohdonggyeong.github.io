@@ -1,13 +1,13 @@
 languageCode:           "en"
 title:                  "Noh Donggyeong's Portfolio"
-baseURL:                "https://nohdonggyeong.github.io/"
+baseURL:                "https://nohdonggyeong.github.io"
 # baseURL:                "http://localhost:1313"
 # baseURL:                "https://flowbite-admin-dashboard.vercel.app/"
 enableInlineShortcodes: true
 canonifyURLs: true
 
 params:
-  homepage: "https://nohdonggyeong.github.io/"
+  homepage: "https://nohdonggyeong.github.io"
   authors: Noh Donggyeong
   social_image_path: images/portfolio-bg.png
 
