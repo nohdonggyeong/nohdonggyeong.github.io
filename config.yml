@@ -1,5 +1,5 @@
 languageCode:           "en"
-title:                  "Flowbite Admin Dashboard"
+title:                  "Noh Donggyeong's Portfolio"
 baseURL:                "https://nohdonggyeong.github.io/"
 # baseURL:                "http://localhost:1313"
 # baseURL:                "https://flowbite-admin-dashboard.vercel.app/"
@@ -7,9 +7,9 @@ enableInlineShortcodes: true
 canonifyURLs: true
 
 params:
-  homepage: "https://flowbite.com/"
-  authors: Themesberg
-  social_image_path: images/og-image.png
+  homepage: "https://nohdonggyeong.github.io/"
+  authors: Noh Donggyeong
+  social_image_path: images/portfolio-bg.png
 
 markup:
   goldmark:
