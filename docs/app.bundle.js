@@ -1,7 +1,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 927:
+/***/ 781:
 /***/ ((module, exports, __webpack_require__) => {
 
 "use strict";
@@ -24,7 +24,7 @@ function(){function t(t){t.remember("_draggable",this),this.el=t}t.prototype.ini
 
 /***/ }),
 
-/***/ 730:
+/***/ 692:
 /***/ ((module) => {
 
 (function webpackUniversalModuleDefinition(root, factory) {
@@ -37,22 +37,22 @@ return /******/ (function() { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 647:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __nested_webpack_require_561__) {
+/***/ (function(__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_561__) {
 
-__nested_webpack_require_561__.r(__webpack_exports__);
+__nested_webpack_require_561__.r(__nested_webpack_exports__);
 // extracted by mini-css-extract-plugin
 
 
 /***/ }),
 
 /***/ 853:
-/***/ (function(__unused_webpack_module, __webpack_exports__, __nested_webpack_require_755__) {
+/***/ (function(__unused_webpack_module, __nested_webpack_exports__, __nested_webpack_require_755__) {
 
 // ESM COMPAT FLAG
-__nested_webpack_require_755__.r(__webpack_exports__);
+__nested_webpack_require_755__.r(__nested_webpack_exports__);
 
 // EXPORTS
-__nested_webpack_require_755__.d(__webpack_exports__, {
+__nested_webpack_require_755__.d(__nested_webpack_exports__, {
   "afterMain": function() { return /* reexport */ afterMain; },
   "afterRead": function() { return /* reexport */ afterRead; },
   "afterWrite": function() { return /* reexport */ afterWrite; },
@@ -4296,10 +4296,10 @@ exports["default"] = Events;
 /******/ 	}();
 /******/ 	
 /************************************************************************/
-var __webpack_exports__ = {};
+var __nested_webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 !function() {
-var exports = __webpack_exports__;
+var exports = __nested_webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 __nested_webpack_require_148673__(647);
@@ -4346,7 +4346,7 @@ exports["default"] = {
 };
 
 }();
-/******/ 	return __webpack_exports__;
+/******/ 	return __nested_webpack_exports__;
 /******/ })()
 ;
 });
@@ -4354,7 +4354,7 @@ exports["default"] = {
 
 /***/ }),
 
-/***/ 834:
+/***/ 4:
 /***/ (() => {
 
 const themeToggleDarkIcon = document.getElementById('theme-toggle-dark-icon');
@@ -4405,7 +4405,7 @@ themeToggleBtn.addEventListener('click', function() {
 
 /***/ }),
 
-/***/ 872:
+/***/ 24:
 /***/ (() => {
 
 const sidebar = document.getElementById('sidebar');
@@ -4503,11 +4503,11 @@ var __webpack_exports__ = {};
 "use strict";
 
 // EXTERNAL MODULE: ./node_modules/flowbite/dist/flowbite.js
-var flowbite = __webpack_require__(730);
+var flowbite = __webpack_require__(692);
 // EXTERNAL MODULE: ./src/sidebar.js
-var sidebar = __webpack_require__(872);
+var sidebar = __webpack_require__(24);
 // EXTERNAL MODULE: ./node_modules/apexcharts/dist/apexcharts.common.js
-var apexcharts_common = __webpack_require__(927);
+var apexcharts_common = __webpack_require__(781);
 var apexcharts_common_default = /*#__PURE__*/__webpack_require__.n(apexcharts_common);
 ;// CONCATENATED MODULE: ./src/charts.js
 
@@ -5113,7 +5113,7 @@ if (document.getElementById('traffic-by-device')) {
 }
 
 // EXTERNAL MODULE: ./src/dark-mode.js
-var dark_mode = __webpack_require__(834);
+var dark_mode = __webpack_require__(4);
 ;// CONCATENATED MODULE: ./src/index.js
 
 
