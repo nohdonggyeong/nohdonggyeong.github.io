@@ -330,35 +330,34 @@ function showDiv(element)
 </script>
 
 
-<script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+<script src="https://cdn.jsdelivr.net/npm/apexcharts@3.35.3"></script>
 <script>
- var options = {
-    series: [{
-    name: 'Point',
-    data: [70, 80, 70, 80, 80, 90],
-}],
-    chart: {
-    height: 400,
-    type: 'radar',
-},
-title: {
-    
-},
-xaxis: {
-    categories: ['코드 작성', '문제 해결', '커뮤니케이션', '기술적 시야', '프로젝트 관리', '지속적 학습']
-},
-yaxis: {
-  max: 100,
-  tickAmount: 5
-}
-};
+document.addEventListener("DOMContentLoaded", function() {
+    var options = {
+        series: [{
+            name: 'Point',
+            data: [70, 80, 70, 80, 80, 90],
+        }],
+        chart: {
+            height: 400,
+            type: 'radar',
+        },
+        xaxis: {
+            categories: ['코드 작성', '문제 해결', '커뮤니케이션', '기술적 시야', '프로젝트 관리', '지속적 학습']
+        },
+        yaxis: {
+            max: 100,
+            tickAmount: 5
+        }
+    };
 
-var chart = new ApexCharts(document.querySelector("#chart"), options);
-chart.render();
-
-document.getElementsByClassName("apexcharts-toolbar")[0].style.display = "none";
-document.getElementsByClassName("apexcharts-text ")[0].style.display = "none";
+    var chart = new ApexCharts(document.querySelector("#chart"), options);
+    chart.render().catch(function(err) {
+        console.error("Chart rendering failed:", err);
+    });
+});
 </script>
+
 
 
 <script type="text/javascript" src="vendor/fancyBox-master/lib/jquery-1.10.2.min.js"></script>   
