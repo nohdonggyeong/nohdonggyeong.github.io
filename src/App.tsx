@@ -64,7 +64,8 @@ function TypingText({ texts }: { texts: string[] }) {
       const t = setTimeout(() => setDisplayed(displayed.slice(0,-1)), 40)
       return () => clearTimeout(t)
     } else if (deleting && displayed.length === 0) {
-      setDeleting(false); setIdx((idx+1)%texts.length)
+      const t = setTimeout(() => { setDeleting(false); setIdx((idx+1)%texts.length) }, 0)
+      return () => clearTimeout(t)
     }
   }, [displayed, deleting, idx, texts])
   return <span>{displayed}<span className="cursor-blink text-accent">|</span></span>
@@ -97,6 +98,28 @@ const accentMap: Record<string, string> = {
   amber: '#f59e0b', blue: '#60a5fa', green: '#4ade80',
 }
 
+
+// ─── Scroll Progress Bar ──────────────────────────────────────────────
+function ScrollProgressBar() {
+  const [progress, setProgress] = useState(0)
+  useEffect(() => {
+    const fn = () => {
+      const scrolled = window.scrollY
+      const total = document.documentElement.scrollHeight - window.innerHeight
+      setProgress(total > 0 ? (scrolled / total) * 100 : 0)
+    }
+    window.addEventListener('scroll', fn, { passive: true })
+    return () => window.removeEventListener('scroll', fn)
+  }, [])
+  return (
+    <div className="fixed top-0 left-0 right-0 z-[60] h-[3px] bg-transparent">
+      <div
+        className="h-full bg-accent transition-[width] duration-75 ease-out"
+        style={{ width: `${progress}%`, boxShadow: '0 0 8px rgba(0,245,212,0.7)' }}
+      />
+    </div>
+  )
+}
 
 // ─── Navbar ───────────────────────────────────────────────────────────
 function Navbar() {
@@ -160,7 +183,7 @@ function Hero() {
 
         {/* Typing */}
         <div className="font-mono text-xl md:text-2xl text-accent mb-20 h-8">
-          <TypingText texts={['MSA 기반 플랫폼 시스템을 E2E로 개발하는 백엔드 개발자', '서비스 분리 설계부터 API 개발, 배포 파이프라인 구축까지 전 과정 수행 가능', '확장성과 안정성을 고려한 시스템 아키텍처 설계에 강점 보유']} />
+          <TypingText texts={['MSA 기반 플랫폼 시스템을 E2E로 개발하는 백엔드 개발자.', '서비스 분리·API 설계·배포 파이프라인 구축 전 과정 주도.', '확장성과 안정성을 우선하는 시스템 아키텍처 설계에 강점 보유.']} />
         </div>
 
         {/* CTA */}
@@ -298,6 +321,7 @@ export default function App() {
       <ParticleCanvas />
       <div className="scanline" />
       <div className="relative z-10">
+        <ScrollProgressBar />
         <Navbar />
         <Hero />
         <Career />
