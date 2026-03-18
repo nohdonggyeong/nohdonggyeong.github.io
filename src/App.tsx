@@ -124,6 +124,7 @@ function ScrollProgressBar() {
 // ─── Navbar ───────────────────────────────────────────────────────────
 function Navbar() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50)
     window.addEventListener('scroll', fn)
@@ -134,9 +135,10 @@ function Navbar() {
     { href:'#projects', label:'프로젝트' },
   ]
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-bg/90 backdrop-blur-md border-b border-accent/10' : ''}`}>
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? 'bg-bg/90 backdrop-blur-md border-b border-accent/10' : ''}`}>
       <div className="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="#" className="font-display font-bold text-accent text-lg text-glow">Donggyeong's Portfolio</a>
+        <a href="#" className="font-display font-bold text-accent text-base md:text-lg text-glow">Donggyeong's Portfolio</a>
+        {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => (
             <a key={l.href} href={l.href}
@@ -149,7 +151,26 @@ function Navbar() {
             LinkedIn →
           </a>
         </div>
+        {/* Mobile hamburger */}
+        <button className="md:hidden text-accent text-xl leading-none px-1" onClick={() => setMenuOpen(o => !o)} aria-label="메뉴">
+          {menuOpen ? '✕' : '☰'}
+        </button>
       </div>
+      {/* Mobile menu */}
+      {menuOpen && (
+        <div className="md:hidden bg-bg/95 backdrop-blur-md border-t border-accent/10 px-6 py-5 flex flex-col gap-5">
+          {links.map(l => (
+            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
+               className="font-mono text-sm text-text-secondary hover:text-accent transition-colors duration-200">
+              {l.label}
+            </a>
+          ))}
+          <a href={profile.linkedin} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
+             className="self-start clip-corner-sm bg-accent/10 border border-accent/30 text-accent font-mono text-xs px-4 py-2 hover:bg-accent/20 transition-all duration-200">
+            LinkedIn →
+          </a>
+        </div>
+      )}
     </nav>
   )
 }
@@ -172,17 +193,17 @@ function Hero() {
 
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 mb-16 clip-corner-sm border border-accent/30 bg-accent/5 px-4 py-2">
-          <span className="font-mono text-accent text-sm">Backend Engineer | MSA • Platform Systems</span>
+        <div className="inline-flex items-center gap-2 mb-8 md:mb-16 clip-corner-sm border border-accent/30 bg-accent/5 px-3 py-1.5 md:px-4 md:py-2">
+          <span className="font-mono text-accent text-xs md:text-sm">Backend Engineer | MSA • Platform Systems</span>
         </div>
 
         {/* Name */}
-        <h1 className="font-display text-7xl md:text-8xl font-extrabold mb-10 leading-none tracking-tighter">
+        <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-extrabold mb-6 md:mb-10 leading-none tracking-tighter">
           <span className="text-text-primary">{profile.name}</span>
         </h1>
 
         {/* Typing */}
-        <div className="font-mono text-xl md:text-2xl text-accent mb-20 h-8">
+        <div className="font-mono text-base sm:text-xl md:text-2xl text-accent mb-12 md:mb-20 min-h-[3rem] md:min-h-[2rem]">
           <TypingText texts={['MSA 기반 플랫폼 시스템을 E2E로 개발하는 백엔드 개발자.', '서비스 분리·API 설계·배포 파이프라인 구축 전 과정 주도.', '확장성과 안정성을 우선하는 시스템 아키텍처 설계에 강점 보유.']} />
         </div>
 
@@ -210,7 +231,7 @@ function Career() {
               <div key={i} className="relative group">
                 <div className="absolute -left-[2.25rem] top-1.5 w-3 h-3 rounded-full border-2 border-accent bg-bg"
                      style={{ boxShadow: c.current ? '0 0 12px rgba(0,245,212,0.8)' : 'none' }} />
-                <div className={`clip-corner border ${c.current ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} p-8`}>
+                <div className={`clip-corner border ${c.current ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} p-5 md:p-8`}>
                   <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
                     <div>
                       <div className="flex items-center gap-3 mb-3">
@@ -251,7 +272,7 @@ function Projects() {
   const ProjectCard = ({ p, large=false }: { p: typeof projects[0]; large?: boolean }) => {
     const bullets = p.desc.split('.').map(s => s.trim()).filter(s => s.length > 0)
     return (
-      <div className={`relative clip-corner border ${p.org === '에스코어' ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} ${large ? 'p-10' : 'p-8'}`}>
+      <div className={`relative clip-corner border ${p.org === '에스코어' ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} ${large ? 'p-6 md:p-10' : 'p-5 md:p-8'}`}>
         {/* corner accent */}
         <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2"
              style={{ borderColor: accentMap[p.color], opacity: 0.3 }} />
