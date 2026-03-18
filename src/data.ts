@@ -1,0 +1,91 @@
+export const profile = {
+  name: "노 동 경",
+  linkedin: "https://www.linkedin.com/in/nohdonggyeong/",
+};
+
+export const careers = [
+  {
+    company: "에스코어(S-Core)",
+    role: "엔지니어",
+    dept: "소프트웨어사업부 / 데이터사업그룹 (프로)",
+    period: "2023.04 – 현재",
+    duration: "약 3년",
+    desc: "MSA 플랫폼 백엔드 E2E 개발 및 운영 담당, GenAI 기술 적용 R&D 통한 서비스 고도화 수행",
+    current: true,
+  },
+  {
+    company: "솔트룩스이노베이션(Saltlux)",
+    role: "연구원",
+    dept: "인공지능사업본부 / 개발팀 (주임)",
+    period: "2020.06 – 2023.02",
+    duration: "2년 9개월",
+    desc: "플랫폼 서비스 풀스택 개발 및 운영 담당, AI 모델 파인튜닝 및 서비스 연동 구현",
+    current: false,
+  },
+];
+
+export const projects = [
+  {
+    name: "삼성SDS - FabriX 개발 프로젝트",
+    org: "에스코어",
+    period: "2025.01. – 2025.12.",
+    desc: "에이전틱 AI 플랫폼 스토어 서비스 개발. 검색 성능 최적화 수행, '하이브리드 검색' 관련 기고.",
+    tags: ["FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "Kubernetes", "ArgoCD", "Jenkins", "Helm"],
+    highlight: true,
+    color: "accent" as const,
+  },
+  {
+    name: "삼성SDS - GraviX 개발 프로젝트",
+    org: "에스코어",
+    period: "2023.04. – 2024.12.",
+    desc: "멀티 테넌트 카탈로그 서비스 개발. 코드 품질 개선, 보안 취약점 검증 대응.",
+    tags: ["Java", "Spring Boot", "JPA", "QueryDSL", "PostgreSQL", "Elasticsearch", "Kubernetes", "Jenkins", "Helm", "Maven", "Flyway", "Pinpoint", "SonarQube", "BurpSuite", "Python"],
+    highlight: true,
+    color: "accent" as const,
+  },
+  {
+    name: "한국지능정보사회진흥원(NIA) - 2022년도 인공지능 학습용 데이터 구축 지원사업",
+    org: "솔트룩스이노베이션",
+    period: "2022.06. – 2022.12.",
+    desc: "자판·음성 인터페이스 기반 오류 교정 데이터 수집 플랫폼 개발. 데이터 집계·검증 관리자 기능 구현.",
+    tags: ["Java", "Spring Boot", "MyBatis", "Cubrid", "Vue.js", "Maven", "Jenkins"],
+    highlight: false,
+    color: "accent" as const,
+  },
+  {
+    name: "인공지능산업융합사업단(AICA) - 2021 AI (시)제품·서비스 제작 지원사업",
+    org: "솔트룩스이노베이션",
+    period: "2021.09. – 2021.12.",
+    desc: "비대면 크라우드소싱 서비스 플랫폼 개발. 회원·비용 관리 등 관리자 기능 구현.",
+    tags: ["Java", "eGovFramework", "Thymeleaf", "MariaDB", "Apache Tomcat", "Docker-compose"],
+    highlight: false,
+    color: "accent" as const,
+  },
+  {
+    name: "한국지능정보사회진흥원(NIA) - 2021년도 인공지능 학습용 데이터 구축 지원사업",
+    org: "솔트룩스이노베이션",
+    period: "2021.05. – 2021.12.",
+    desc: "차량 내·외부 상황 인식 데이터 수집 플랫폼 개발. 데이터 수집·라벨링·검증 E2E 프로세스 구축.",
+    tags: ["Python", "Django", "Javascript", "MariaDB", "MediaPipe Hands", "Nginx", "Gunicorn", "Docker-compose"],
+    highlight: false,
+    color: "accent" as const,
+  },
+  {
+    name: "인공지능산업융합사업단(AICA) - 2020 AI 시제품 제작 지원사업",
+    org: "솔트룩스이노베이션",
+    period: "2020.09. – 2020.12.",
+    desc: "심층 질의응답 기반 디지털 휴먼 제품 개발. TTS 모델 파인튜닝 수행.",
+    tags: ["Python", "TTS(Tacotron2)", "STT", "CentOS", "Ubuntu"],
+    highlight: false,
+    color: "accent" as const,
+  },
+  {
+    name: "한국지능정보사회진흥원(NIA) - 2020 인공지능 학습용 데이터 구축 지원사업",
+    org: "솔트룩스이노베이션",
+    period: "2020.09. – 2020.12.",
+    desc: "폐암 예후 예측 AI 데이터 수집 플랫폼 개발. 데이터 수집·라벨링 기능 개발.",
+    tags: ["Python", "Django", "Javascript", "PostgreSQL", "Bootstrap", "Nginx", "Gunicorn", "Docker-compose"],
+    highlight: false,
+    color: "accent" as const,
+  },
+];
