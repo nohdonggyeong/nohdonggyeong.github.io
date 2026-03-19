@@ -243,7 +243,6 @@ function Career() {
                     </div>
                     <div className="text-right">
                       <p className="font-mono text-sm text-text-secondary">{c.period}</p>
-                      <p className="font-mono text-xs text-muted mt-2">{c.duration}</p>
                     </div>
                   </div>
                   <ul className="space-y-3">
