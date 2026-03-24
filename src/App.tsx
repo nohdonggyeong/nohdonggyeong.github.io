@@ -198,13 +198,13 @@ function Hero() {
         </div>
 
         {/* Name */}
-        <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-extrabold mb-6 md:mb-10 leading-none tracking-tighter">
+        <h1 className="font-display text-5xl sm:text-7xl md:text-8xl font-extrabold mb-6 md:mb-10 leading-none tracking-widest">
           <span className="text-text-primary">{profile.name}</span>
         </h1>
 
         {/* Typing */}
         <div className="font-mono text-base sm:text-xl md:text-2xl text-accent mb-12 md:mb-20 min-h-[3rem] md:min-h-[2rem]">
-          <TypingText texts={['MSA 기반 플랫폼 시스템을 E2E로 개발하는 백엔드 개발자.', '서비스 분리·API 설계·배포 파이프라인 구축 전 과정 주도.', '확장성과 안정성을 우선하는 시스템 아키텍처 설계에 강점 보유.']} />
+          <TypingText texts={['MSA 기반 플랫폼 시스템을 End-to-End로 개발하는 백엔드 엔지니어입니다.', '서비스 분리 설계부터 API 구현, 배포 자동화까지 전 과정을 수행합니다.', '확장 가능하고 안정적인 시스템 아키텍처 설계를 지향합니다.']} />
         </div>
 
         {/* CTA */}

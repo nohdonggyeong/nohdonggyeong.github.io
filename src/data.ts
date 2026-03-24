@@ -1,5 +1,5 @@
 export const profile = {
-  name: "노 동 경",
+  name: "노동경",
   linkedin: "https://www.linkedin.com/in/nohdonggyeong/",
 };
 
@@ -9,7 +9,7 @@ export const careers = [
     role: "엔지니어",
     dept: "소프트웨어사업부 / 데이터사업그룹 (프로)",
     period: "2023.04 – 현재",
-    desc: "MSA 플랫폼 백엔드 E2E 개발 및 운영 담당, GenAI 기술 적용 R&D 통한 서비스 고도화 수행",
+    desc: "MSA 플랫폼 백엔드 E2E 개발 및 운영 담당. GenAI 기술 적용 R&D 통한 서비스 고도화 수행",
     current: true,
   },
   {
@@ -17,7 +17,7 @@ export const careers = [
     role: "연구원",
     dept: "인공지능사업본부 / 개발팀 (주임)",
     period: "2020.06 – 2023.02",
-    desc: "플랫폼 서비스 풀스택 개발 및 운영 담당, AI 모델 파인튜닝 및 서비스 연동 구현",
+    desc: "플랫폼 서비스 풀스택 개발 및 운영 담당. AI 모델 파인튜닝 및 서비스 연동 구현",
     current: false,
   },
 ];
@@ -27,7 +27,7 @@ export const projects = [
     name: "삼성SDS - FabriX 개발 프로젝트",
     org: "에스코어",
     period: "2025.01. – 2025.12.",
-    desc: "에이전틱 AI 플랫폼 스토어 서비스 개발. 검색 성능 최적화 수행, '하이브리드 검색' 관련 기고.",
+    desc: "AI 에이전트 플랫폼 스토어 서비스 개발. 검색 성능 최적화 수행, '하이브리드 검색' 관련 기고.",
     tags: ["FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "Kubernetes", "ArgoCD", "Jenkins", "Helm"],
     highlight: true,
     color: "accent" as const,
