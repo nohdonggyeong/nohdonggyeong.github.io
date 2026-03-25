@@ -76,7 +76,7 @@ function TypingText({ texts }: { texts: string[] }) {
 function Section({ id, children, className='' }: { id:string; children:React.ReactNode; className?:string }) {
   const { ref, visible } = useScrollAnimation()
   return (
-    <section id={id} ref={ref} className={`transition-all duration-1000 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'} ${className}`}>
+    <section id={id} ref={ref} className={`transition-opacity duration-700 ${visible ? 'opacity-100' : 'opacity-0'} ${className}`}>
       {children}
     </section>
   )
@@ -103,14 +103,8 @@ function scrollToSection(sectionId: string) {
   const el = document.getElementById(sectionId)
   if (!el) return
   const nav = document.querySelector('nav')
-  const navHeight = nav instanceof HTMLElement ? nav.offsetHeight : 0
-  let top = el.offsetTop
-  let parent = el.offsetParent as HTMLElement | null
-  while (parent) {
-    top += parent.offsetTop
-    parent = parent.offsetParent as HTMLElement | null
-  }
-  top = top - navHeight - 16
+  const navOffset = nav instanceof HTMLElement ? nav.getBoundingClientRect().height + 12 : 12
+  const top = Math.max(0, window.scrollY + el.getBoundingClientRect().top - navOffset)
   window.scrollTo({ top, behavior: 'smooth' })
   const url = new URL(window.location.href)
   url.hash = sectionId
@@ -175,7 +169,15 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-bg/95 backdrop-blur-md border-t border-accent/10 px-6 py-5 flex flex-col gap-5">
           {links.map(l => (
-            <button key={l.id} type="button" onClick={() => { scrollToSection(l.id); setMenuOpen(false) }}
+            <button
+              key={l.id}
+              type="button"
+              onClick={() => {
+                setMenuOpen(false)
+                requestAnimationFrame(() => {
+                  requestAnimationFrame(() => scrollToSection(l.id))
+                })
+              }}
                className="font-mono text-sm text-text-secondary hover:text-accent transition-colors duration-200">
               {l.label}
             </button>
@@ -234,6 +236,7 @@ function Projects() {
   const allProjects = [...mainProjects, ...sideProjects]
   const [openedProjectId, setOpenedProjectId] = useState<string | null>(null)
   const [openedGallery, setOpenedGallery] = useState<{ images: string[]; index: number; title: string } | null>(null)
+  const actionButtonClass = 'clip-corner bg-accent text-bg font-display font-bold px-4 py-2.5 text-xs md:text-sm tracking-wide border border-white/20 shadow-[0_0_20px_rgba(0,245,212,0.45)] hover:brightness-110 transition-all duration-200'
   const toList = (value: string | string[]) => (Array.isArray(value) ? value : [value])
   const renderTextWithLinks = (text: string) => {
     const nodes: React.ReactNode[] = []
@@ -436,7 +439,7 @@ function Projects() {
                       <h4 className="font-display font-bold text-xl text-text-primary mb-1">{openedProject.name}</h4>
                       <p className="font-mono text-xs text-text-secondary">{openedProject.period}</p>
                     </div>
-                    <button type="button" onClick={closeModal} className="clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent">
+                    <button type="button" onClick={closeModal} className={actionButtonClass}>
                       CLOSE
                     </button>
                   </div>
@@ -502,9 +505,9 @@ function Projects() {
                             href={openedProject.demoUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex flex-col items-start font-mono text-sm text-accent hover:underline leading-tight"
+                            className="mt-1 block font-mono text-sm text-accent hover:underline leading-tight"
                           >
-                            <span>portfolio_ver1.html</span>
+                            portfolio_ver1.html
                           </a>
                         ) : openedProject.video ? (
                           <video controls className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain">
@@ -537,7 +540,7 @@ function Projects() {
               <button
                 type="button"
                 onClick={() => setOpenedGallery(null)}
-                className="absolute top-4 right-4 md:top-8 md:right-8 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent"
+                className={`absolute top-4 right-4 md:top-8 md:right-8 z-20 ${actionButtonClass}`}
               >
                 CLOSE
               </button>
@@ -551,7 +554,7 @@ function Projects() {
                         index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
                       })
                     }
-                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent z-20"
+                    className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 ${actionButtonClass}`}
                   >
                     PREV
                   </button>
@@ -563,7 +566,7 @@ function Projects() {
                         index: (openedGallery.index + 1) % openedGallery.images.length,
                       })
                     }
-                    className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent z-20"
+                    className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 ${actionButtonClass}`}
                   >
                     NEXT
                   </button>
