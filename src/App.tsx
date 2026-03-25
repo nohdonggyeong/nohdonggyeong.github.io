@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react'
-import { profile, careers, projects } from './data'
+import { createPortal } from 'react-dom'
+import { profile, mainProjects, sideProjects, type Project } from './data'
 import { useScrollAnimation } from './hooks/useScrollAnimation'
 
 // ─── Particle Canvas ────────────────────────────────────────────────
@@ -98,6 +99,24 @@ const accentMap: Record<string, string> = {
   amber: '#f59e0b', blue: '#60a5fa', green: '#4ade80',
 }
 
+function scrollToSection(sectionId: string) {
+  const el = document.getElementById(sectionId)
+  if (!el) return
+  const nav = document.querySelector('nav')
+  const navHeight = nav instanceof HTMLElement ? nav.offsetHeight : 0
+  let top = el.offsetTop
+  let parent = el.offsetParent as HTMLElement | null
+  while (parent) {
+    top += parent.offsetTop
+    parent = parent.offsetParent as HTMLElement | null
+  }
+  top = top - navHeight - 16
+  window.scrollTo({ top, behavior: 'smooth' })
+  const url = new URL(window.location.href)
+  url.hash = sectionId
+  window.history.replaceState(null, '', `${url.pathname}${url.search}${url.hash}`)
+}
+
 
 // ─── Scroll Progress Bar ──────────────────────────────────────────────
 function ScrollProgressBar() {
@@ -131,8 +150,8 @@ function Navbar() {
     return () => window.removeEventListener('scroll', fn)
   }, [])
   const links = [
-    { href:'#career', label:'경력사항' },
-    { href:'#projects', label:'프로젝트' },
+    { id:'main-project', label:'Main Project' },
+    { id:'side-project', label:'Side Project' },
   ]
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled || menuOpen ? 'bg-bg/90 backdrop-blur-md border-b border-accent/10' : ''}`}>
@@ -141,15 +160,11 @@ function Navbar() {
         {/* Desktop */}
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => (
-            <a key={l.href} href={l.href}
+            <button key={l.id} type="button" onClick={() => scrollToSection(l.id)}
                className="font-mono text-sm text-text-secondary hover:text-accent transition-colors duration-200">
               {l.label}
-            </a>
+            </button>
           ))}
-          <a href={profile.linkedin} target="_blank" rel="noreferrer"
-             className="clip-corner-sm bg-accent/10 border border-accent/30 text-accent font-mono text-xs px-4 py-2 hover:bg-accent/20 transition-all duration-200">
-            LinkedIn →
-          </a>
         </div>
         {/* Mobile hamburger */}
         <button className="md:hidden text-accent text-xl leading-none px-1" onClick={() => setMenuOpen(o => !o)} aria-label="메뉴">
@@ -160,15 +175,11 @@ function Navbar() {
       {menuOpen && (
         <div className="md:hidden bg-bg/95 backdrop-blur-md border-t border-accent/10 px-6 py-5 flex flex-col gap-5">
           {links.map(l => (
-            <a key={l.href} href={l.href} onClick={() => setMenuOpen(false)}
+            <button key={l.id} type="button" onClick={() => { scrollToSection(l.id); setMenuOpen(false) }}
                className="font-mono text-sm text-text-secondary hover:text-accent transition-colors duration-200">
               {l.label}
-            </a>
+            </button>
           ))}
-          <a href={profile.linkedin} target="_blank" rel="noreferrer" onClick={() => setMenuOpen(false)}
-             className="self-start clip-corner-sm bg-accent/10 border border-accent/30 text-accent font-mono text-xs px-4 py-2 hover:bg-accent/20 transition-all duration-200">
-            LinkedIn →
-          </a>
         </div>
       )}
     </nav>
@@ -209,112 +220,369 @@ function Hero() {
 
         {/* CTA */}
         <div className="flex flex-wrap items-center justify-center gap-4">
-          <a href="#career" className="clip-corner bg-accent text-bg font-display font-bold px-8 py-4 text-sm hover:shadow-glow-accent transition-all duration-300 hover:scale-105">
-            바로 보기
-          </a>
+          <button type="button" onClick={() => scrollToSection('main-project')} className="clip-corner bg-accent text-bg font-display font-bold px-8 py-4 text-sm hover:shadow-glow-accent transition-all duration-300 hover:scale-105">
+            프로젝트 보기
+          </button>
         </div>
       </div>
     </div>
   )
 }
 
-// ─── Career ───────────────────────────────────────────────────────────
-function Career() {
-  return (
-    <Section id="career" className="py-24 px-6 bg-surface/30">
-      <div className="max-w-6xl mx-auto">
-        <SectionLabel n="01" label="경력사항" />
-        <div className="relative">
-          <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-accent/40 via-accent/10 to-transparent" />
-          <div className="space-y-12 pl-12">
-            {careers.map((c, i) => (
-              <div key={i} className="relative group">
-                <div className="absolute -left-[2.25rem] top-1.5 w-3 h-3 rounded-full border-2 border-accent bg-bg"
-                     style={{ boxShadow: c.current ? '0 0 12px rgba(0,245,212,0.8)' : 'none' }} />
-                <div className={`clip-corner border ${c.current ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} p-5 md:p-8`}>
-                  <div className="flex flex-wrap items-start justify-between gap-4 mb-8">
-                    <div>
-                      <div className="flex items-center gap-3 mb-3">
-                        <h3 className="font-display font-bold text-xl text-text-primary">{c.company}</h3>
-                        {c.current && <span className="font-mono text-xs bg-accent/20 text-accent border border-accent/30 px-2 py-0.5 clip-corner-sm">재직중</span>}
-                      </div>
-                      <p className="font-mono text-sm text-accent mb-2">{c.role}</p>
-                      {c.dept && <p className="text-xs text-text-secondary">{c.dept}</p>}
-                    </div>
-                    <div className="text-right">
-                      <p className="font-mono text-sm text-text-secondary">{c.period}</p>
-                    </div>
-                  </div>
-                  <ul className="space-y-3">
-                    {c.desc.split('.').map(s => s.trim()).filter(s => s.length > 0).map((b, j) => (
-                      <li key={j} className="flex items-start gap-2.5 text-text-secondary text-sm leading-relaxed">
-                        <span className="text-accent mt-0.5 shrink-0">•</span>
-                        <span>{b}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-    </Section>
-  )
-}
-
 // ─── Projects ─────────────────────────────────────────────────────────
 function Projects() {
-  const highlighted = projects.filter(p => p.highlight)
-  const rest = projects.filter(p => !p.highlight)
+  const allProjects = [...mainProjects, ...sideProjects]
+  const [openedProjectId, setOpenedProjectId] = useState<string | null>(null)
+  const [openedGallery, setOpenedGallery] = useState<{ images: string[]; index: number; title: string } | null>(null)
+  const toList = (value: string | string[]) => (Array.isArray(value) ? value : [value])
+  const renderTextWithLinks = (text: string) => {
+    const nodes: React.ReactNode[] = []
+    const markdownLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g
+    let lastIndex = 0
+    let match: RegExpExecArray | null = null
 
-  const ProjectCard = ({ p, large=false }: { p: typeof projects[0]; large?: boolean }) => {
-    const bullets = p.desc.split('.').map(s => s.trim()).filter(s => s.length > 0)
-    return (
-      <div className={`relative clip-corner border ${p.org === '에스코어' ? 'border-accent/40 bg-accent/5' : 'border-surface-2 bg-surface'} ${large ? 'p-6 md:p-10' : 'p-5 md:p-8'}`}>
-        {/* corner accent */}
-        <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2"
-             style={{ borderColor: accentMap[p.color], opacity: 0.3 }} />
-        <div className="mb-5">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="inline-block font-mono text-xs px-2 py-0.5 rounded-sm"
-                  style={{ color: accentMap[p.color], backgroundColor: accentMap[p.color]+'15', border: `1px solid ${accentMap[p.color]}30` }}>
-              {p.org}
-            </span>
-            <span className="font-mono text-xs text-muted">{p.period}</span>
-          </div>
-          <h3 className={`font-display font-bold text-text-primary leading-snug ${large ? 'text-xl' : 'text-base'}`}>{p.name}</h3>
-        </div>
-        <ul className="space-y-2.5 mb-6">
-          {bullets.map((b, j) => (
-            <li key={j} className="flex items-start gap-2.5 text-sm leading-relaxed">
-              <span style={{ color: accentMap[p.color] }} className="mt-[3px] shrink-0 text-xs">•</span>
-              <span className="text-text-secondary">{b}</span>
-            </li>
-          ))}
-        </ul>
-        <div className="flex flex-wrap gap-1.5">
-          {p.tags.map(t => (
-            <span key={t} className="font-mono text-xs px-2 py-0.5 border clip-corner-sm"
-                  style={{ color: accentMap[p.color], borderColor: accentMap[p.color]+'30', backgroundColor: accentMap[p.color]+'08' }}>
-              {t}
-            </span>
-          ))}
-        </div>
-      </div>
-    )
+    while ((match = markdownLinkRegex.exec(text)) !== null) {
+      if (match.index > lastIndex) {
+        const segment = text.slice(lastIndex, match.index)
+        nodes.push(...segment.split(/(https?:\/\/[^\s]+)/g).map((part, idx) => {
+          if (/^https?:\/\/[^\s]+$/.test(part)) {
+            return (
+              <a key={`url-${match?.index}-${idx}`} href={part} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+                링크
+              </a>
+            )
+          }
+          return <span key={`txt-${match?.index}-${idx}`}>{part}</span>
+        }))
+      }
+
+      const label = match[1]
+      const href = match[2]
+      nodes.push(
+        <a key={`md-${match.index}`} href={href} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+          {label}
+        </a>
+      )
+
+      lastIndex = markdownLinkRegex.lastIndex
+    }
+
+    if (lastIndex < text.length) {
+      const tail = text.slice(lastIndex)
+      nodes.push(...tail.split(/(https?:\/\/[^\s]+)/g).map((part, idx) => {
+        if (/^https?:\/\/[^\s]+$/.test(part)) {
+          return (
+            <a key={`tail-url-${idx}`} href={part} target="_blank" rel="noreferrer" className="text-accent hover:underline">
+              링크
+            </a>
+          )
+        }
+        return <span key={`tail-txt-${idx}`}>{part}</span>
+      }))
+    }
+
+    return nodes
   }
+
+  const syncFromUrl = useCallback(() => {
+    const id = new URLSearchParams(window.location.search).get('project')
+    if (id && allProjects.some((p) => p.id === id)) {
+      setOpenedProjectId(id)
+      return
+    }
+    setOpenedProjectId(null)
+  }, [allProjects])
+
+  useEffect(() => {
+    syncFromUrl()
+    window.addEventListener('popstate', syncFromUrl)
+    return () => window.removeEventListener('popstate', syncFromUrl)
+  }, [syncFromUrl])
+
+  useEffect(() => {
+    const body = document.body
+    if (openedProjectId || openedGallery) {
+      body.style.overflow = 'hidden'
+    } else {
+      body.style.overflow = ''
+    }
+    return () => {
+      body.style.overflow = ''
+    }
+  }, [openedProjectId, openedGallery])
+
+  useEffect(() => {
+    const onEsc = (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && openedGallery) {
+        setOpenedGallery(null)
+        return
+      }
+      if (e.key === 'ArrowLeft' && openedGallery && openedGallery.images.length > 1) {
+        setOpenedGallery({
+          ...openedGallery,
+          index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
+        })
+        return
+      }
+      if (e.key === 'ArrowRight' && openedGallery && openedGallery.images.length > 1) {
+        setOpenedGallery({
+          ...openedGallery,
+          index: (openedGallery.index + 1) % openedGallery.images.length,
+        })
+        return
+      }
+      if (e.key === 'Escape' && openedProjectId) {
+        closeModal()
+      }
+    }
+    window.addEventListener('keydown', onEsc)
+    return () => window.removeEventListener('keydown', onEsc)
+  }, [openedProjectId, openedGallery])
+
+  const setProjectInUrl = (id: string | null) => {
+    const url = new URL(window.location.href)
+    if (id) {
+      url.searchParams.set('project', id)
+    } else {
+      url.searchParams.delete('project')
+    }
+    window.history.pushState(null, '', `${url.pathname}${url.search}${url.hash}`)
+  }
+
+  const openModal = (id: string) => {
+    setOpenedProjectId(id)
+    setProjectInUrl(id)
+  }
+
+  const closeModal = () => {
+    setOpenedProjectId(null)
+    setProjectInUrl(null)
+  }
+
+  const openedProject = allProjects.find((p) => p.id === openedProjectId) ?? null
+  const openedGalleryImage = openedGallery ? openedGallery.images[openedGallery.index] : null
+
+  const ProjectSection = ({ id, n, title, projects }: { id: string; n: string; title: string; projects: Project[] }) => (
+    <div id={id} className="mb-20 last:mb-0 scroll-mt-24 md:scroll-mt-28">
+      <SectionLabel n={n} label={title} />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {projects.map((p) => (
+          <div
+            key={p.id}
+            onClick={() => openModal(p.id)}
+            className="relative clip-corner border border-surface-2 bg-surface p-5 md:p-8 text-left hover:border-accent/40 transition-colors cursor-pointer"
+          >
+            <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2" style={{ borderColor: accentMap[p.color], opacity: 0.3 }} />
+            <div className="mb-5">
+              <div className="flex items-center gap-2 mb-2">
+                <span
+                  className="inline-block font-mono text-xs px-2 py-0.5 rounded-sm"
+                  style={{ color: accentMap[p.color], backgroundColor: accentMap[p.color] + '15', border: `1px solid ${accentMap[p.color]}30` }}
+                >
+                  {p.org}
+                </span>
+                <span className="font-mono text-xs text-muted">{p.period}</span>
+              </div>
+              <p className="font-display font-bold text-text-primary leading-snug text-base">{p.name}</p>
+            </div>
+            <ul className="mb-6 space-y-1.5">
+              {toList(p.summary).map((line, idx) => (
+                <li key={`${p.id}-summary-${idx}`} className="text-sm leading-relaxed text-text-secondary">
+                  • {line}
+                </li>
+              ))}
+            </ul>
+            <p className="font-mono text-xs text-accent mb-2">주요 화면</p>
+            <div className="clip-corner-sm border border-surface-2 bg-surface/70 p-2">
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  setOpenedGallery({
+                    images: p.galleryImages && p.galleryImages.length > 0 ? p.galleryImages : [p.previewImage],
+                    index: 0,
+                    title: p.name,
+                  })
+                }}
+                className="block w-full"
+              >
+                <img
+                  src={p.previewImage}
+                  alt={`${p.name} 주요 화면`}
+                  className="w-full h-52 rounded-sm object-cover object-top hover:opacity-90 transition-opacity"
+                />
+              </button>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
 
   return (
     <Section id="projects" className="py-24 px-6">
       <div className="max-w-6xl mx-auto">
-        <SectionLabel n="02" label="프로젝트" />
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          {highlighted.map((p, i) => <ProjectCard key={i} p={p} large />)}
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {rest.map((p, i) => <ProjectCard key={i} p={p} />)}
-        </div>
+        <ProjectSection id="main-project" n="01" title="메인 프로젝트" projects={mainProjects} />
+        <ProjectSection id="side-project" n="02" title="사이드 프로젝트" projects={sideProjects} />
+
+        {openedProject && createPortal(
+          <div className="fixed inset-0 z-[100]">
+            <button type="button" aria-label="모달 닫기 배경" className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" onClick={closeModal} />
+            <div className="relative z-10 h-full w-full overflow-y-auto">
+              <div className="min-h-full grid place-items-center p-4">
+                <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto clip-corner border border-accent/30 bg-bg p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-4 mb-6">
+                    <div>
+                      <h4 className="font-display font-bold text-xl text-text-primary mb-1">{openedProject.name}</h4>
+                      <p className="font-mono text-xs text-text-secondary">{openedProject.period}</p>
+                    </div>
+                    <button type="button" onClick={closeModal} className="clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent">
+                      CLOSE
+                    </button>
+                  </div>
+
+                  <div className="space-y-6">
+                    <div>
+                      <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
+                        {openedProject.kind === 'main' ? '과제 설명' : '제작 의도'}
+                      </p>
+                      <ul className="space-y-2">
+                        {toList(openedProject.detail).map((line, idx) => (
+                          <li key={`${openedProject.id}-detail-${idx}`} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
+                            <span className="text-accent mt-0.5">•</span>
+                            <span>{renderTextWithLinks(line)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
+                        {openedProject.kind === 'main' ? '담당 부분' : '구현 사항'}
+                      </p>
+                      <ul className="space-y-2">
+                        {toList(openedProject.contributions).map((line, idx) => (
+                          <li key={`${openedProject.id}-contrib-${idx}`} className="flex items-start gap-2 text-sm leading-relaxed text-text-secondary">
+                            <span className="text-accent mt-0.5">•</span>
+                            <span>{renderTextWithLinks(line)}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">적용 기술</p>
+                      <div className="flex flex-wrap gap-2">
+                        {openedProject.tags.map((t) => (
+                          <span
+                            key={t}
+                            className="font-mono text-xs px-2.5 py-1 border clip-corner-sm text-text-primary/90"
+                            style={{
+                              borderColor: accentMap[openedProject.color] + '45',
+                              backgroundColor: accentMap[openedProject.color] + '12',
+                              boxShadow: `inset 0 0 0 1px ${accentMap[openedProject.color]}18`,
+                            }}
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {openedProject.kind === 'main' ? (
+                      <div>
+                        <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">참고 도식</p>
+                        <img src={openedProject.architectureImage} alt={`${openedProject.name} architecture`} className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain" />
+                      </div>
+                    ) : (
+                      <div>
+                        <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
+                          {openedProject.demoUrl ? '포트폴리오 접속' : '시연 영상'}
+                        </p>
+                        {openedProject.demoUrl ? (
+                          <a
+                            href={openedProject.demoUrl}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="inline-flex flex-col items-start font-mono text-sm text-accent hover:underline leading-tight"
+                          >
+                            <span>portfolio_ver1.html</span>
+                          </a>
+                        ) : openedProject.video ? (
+                          <video controls className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain">
+                            <source src={openedProject.video} type="video/mp4" />
+                          </video>
+                        ) : (
+                          <div className="w-full h-[360px] rounded-md border border-surface-2 bg-surface flex items-center justify-center text-sm text-text-secondary">
+                            시연 영상이 없습니다.
+                          </div>
+                        )}
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>,
+          document.body
+        )}
+
+        {openedGallery && openedGalleryImage && createPortal(
+          <div className="fixed inset-0 z-[110]">
+            <button
+              type="button"
+              aria-label="이미지 닫기 배경"
+              className="absolute inset-0 bg-black/85"
+              onClick={() => setOpenedGallery(null)}
+            />
+            <div className="relative z-10 h-full w-full p-4 md:p-8 grid place-items-center">
+              <button
+                type="button"
+                onClick={() => setOpenedGallery(null)}
+                className="absolute top-4 right-4 md:top-8 md:right-8 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent"
+              >
+                CLOSE
+              </button>
+              {openedGallery.images.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenedGallery({
+                        ...openedGallery,
+                        index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
+                      })
+                    }
+                    className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent z-20"
+                  >
+                    PREV
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() =>
+                      setOpenedGallery({
+                        ...openedGallery,
+                        index: (openedGallery.index + 1) % openedGallery.images.length,
+                      })
+                    }
+                    className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 clip-corner-sm border border-surface-2 bg-surface px-3 py-2 text-xs font-mono text-text-secondary hover:text-accent z-20"
+                  >
+                    NEXT
+                  </button>
+                </>
+              )}
+              <img
+                src={openedGalleryImage}
+                alt={`${openedGallery.title} 확대 이미지`}
+                className="max-w-[95vw] max-h-[90vh] object-contain rounded-md border border-surface-2 bg-surface"
+              />
+              {openedGallery.images.length > 1 && (
+                <p className="absolute bottom-4 md:bottom-8 font-mono text-xs text-text-secondary">
+                  {openedGallery.index + 1} / {openedGallery.images.length}
+                </p>
+              )}
+            </div>
+          </div>,
+          document.body
+        )}
       </div>
     </Section>
   )
@@ -324,11 +592,6 @@ function Projects() {
 function Footer() {
   return (
     <footer className="py-12 px-6 border-t border-surface-2 text-center">
-      <p className="font-mono text-sm text-text-secondary mb-2">
-        보다 자세한 정보는{' '}
-        <a href={profile.linkedin} target="_blank" rel="noreferrer" className="text-accent hover:underline">LinkedIn 프로필</a>
-        에서 확인하실 수 있습니다.
-      </p>
       <p className="font-mono text-xs text-muted/50 mt-4">© 2026. Donggyeong Noh. All rights reserved.</p>
     </footer>
   )
@@ -344,7 +607,6 @@ export default function App() {
         <ScrollProgressBar />
         <Navbar />
         <Hero />
-        <Career />
         <Projects />
 
         <Footer />
