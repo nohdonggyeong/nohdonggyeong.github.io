@@ -48,7 +48,7 @@ export const mainProjects: Project[] = [
     org: "에스코어",
     period: "2023.04. - 2024.12.",
     summary: ["멀티 테넌트 카탈로그 서비스 백엔드 설계·구현", "코드 품질 개선 및 보안 취약점 대응 체계 운영"],
-    detail: ["기업 내 데이터·소프트웨어·애플리케이션 자산의 통합 관리와 탐색 효율 개선을 목표로 한 카탈로그 플랫폼 개발 과제"],
+    detail: ["기업 내 데이터·소프트웨어·애플리케이션 자산의 통합 관리와 탐색 효율 개선을 목표로 한 카탈로그 플랫폼(현, FabriX) 개발 과제"],
     contributions: ["MSA 기반 백엔드 기능 개발, 검색 엔진 운영, 정적 분석 기반 품질 개선, 보안 점검 대응, 성능 모니터링 및 배포 운영 수행"],
     tags: ["Java", "Spring Boot", "JPA", "QueryDSL", "PostgreSQL", "Elasticsearch", "Kubernetes", "Jenkins", "Helm", "Maven", "Flyway", "Pinpoint", "SonarQube", "BurpSuite", "Python"],
     color: "accent",

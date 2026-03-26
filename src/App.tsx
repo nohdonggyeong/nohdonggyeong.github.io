@@ -236,7 +236,8 @@ function Projects() {
   const allProjects = [...mainProjects, ...sideProjects]
   const [openedProjectId, setOpenedProjectId] = useState<string | null>(null)
   const [openedGallery, setOpenedGallery] = useState<{ images: string[]; index: number; title: string } | null>(null)
-  const actionButtonClass = 'clip-corner bg-accent text-bg font-display font-bold px-4 py-2.5 text-xs md:text-sm tracking-wide border border-white/20 shadow-[0_0_20px_rgba(0,245,212,0.45)] hover:brightness-110 transition-all duration-200'
+  const closeButtonClass = 'inline-flex items-center justify-center clip-corner bg-accent text-bg font-display font-bold px-3 py-2 text-[11px] md:text-xs tracking-wide leading-none border border-white/20 shadow-[0_0_16px_rgba(0,245,212,0.38)] hover:brightness-110 transition-all duration-200'
+  const galleryNavButtonClass = 'clip-corner bg-accent text-bg font-display font-bold px-2.5 py-1 text-[9px] md:text-[10px] tracking-wide border border-white/20 shadow-[0_0_10px_rgba(0,245,212,0.3)] hover:brightness-110 transition-all duration-200'
   const toList = (value: string | string[]) => (Array.isArray(value) ? value : [value])
   const renderTextWithLinks = (text: string) => {
     const nodes: React.ReactNode[] = []
@@ -439,7 +440,7 @@ function Projects() {
                       <h4 className="font-display font-bold text-xl text-text-primary mb-1">{openedProject.name}</h4>
                       <p className="font-mono text-xs text-text-secondary">{openedProject.period}</p>
                     </div>
-                    <button type="button" onClick={closeModal} className={actionButtonClass}>
+                    <button type="button" onClick={closeModal} className={closeButtonClass}>
                       CLOSE
                     </button>
                   </div>
@@ -540,7 +541,7 @@ function Projects() {
               <button
                 type="button"
                 onClick={() => setOpenedGallery(null)}
-                className={`absolute top-4 right-4 md:top-8 md:right-8 z-20 ${actionButtonClass}`}
+                className={`absolute top-4 right-4 md:top-8 md:right-8 z-20 ${closeButtonClass}`}
               >
                 CLOSE
               </button>
@@ -554,7 +555,7 @@ function Projects() {
                         index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
                       })
                     }
-                    className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 ${actionButtonClass}`}
+                    className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 ${galleryNavButtonClass}`}
                   >
                     PREV
                   </button>
@@ -566,7 +567,7 @@ function Projects() {
                         index: (openedGallery.index + 1) % openedGallery.images.length,
                       })
                     }
-                    className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 ${actionButtonClass}`}
+                    className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 ${galleryNavButtonClass}`}
                   >
                     NEXT
                   </button>
