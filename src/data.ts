@@ -50,7 +50,7 @@ export const mainProjects: Project[] = [
     org: "에스코어",
     period: "2023.04. - 2024.12.",
     summary: ["멀티 테넌트 카탈로그 서비스 백엔드 설계·구현", "카탈로그 REST API 구현 및 DB 마이그레이션 관리"],
-    detail: ["(현, FabriX) ㄹ기업 내 데이터·소프트웨어·애플리케이션 자산의 통합 관리와 탐색 효율 개선을 목표로 한 카탈로그 플랫폼 개발 과제"],
+    detail: ["(현, FabriX) 기업 내 데이터·소프트웨어·애플리케이션 자산의 통합 관리와 탐색 효율 개선을 목표로 한 카탈로그 플랫폼 개발 과제"],
     contributions: [
       "Spring Boot + JPA/QueryDSL로 멀티 테넌트 카탈로그 도메인 REST API 구현, Flyway 기반 DB 마이그레이션 관리",
       "Elasticsearch 인덱스 설계 및 검색 쿼리 튜닝으로 카탈로그 탐색 성능 개선",

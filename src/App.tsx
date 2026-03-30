@@ -217,7 +217,7 @@ function Hero() {
 
         {/* Typing */}
         <div className="font-mono text-base sm:text-xl md:text-2xl text-accent mb-12 md:mb-20 min-h-[3rem] md:min-h-[2rem]">
-          <TypingText texts={['서비스 분리 설계부터 API 구현, 배포 자동화까지', 'MSA 기반 플랫폼 시스템을 End-to-End로 개발합니다.', '확장 가능하고 안정적인 아키텍처를 지향합니다.']} />
+          <TypingText texts={['서비스 분리 설계부터 API 구현, 배포 자동화까지', 'MSA 기반 플랫폼 시스템을 E2E로 개발합니다.', '확장 가능하고 안정적인 아키텍처를 지향합니다.']} />
         </div>
 
         {/* CTA */}
