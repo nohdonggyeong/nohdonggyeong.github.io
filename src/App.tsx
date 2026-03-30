@@ -448,7 +448,7 @@ function Projects() {
                   <div className="space-y-6">
                     <div>
                       <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                        {openedProject.kind === 'main' ? '과제 설명' : '제작 의도'}
+                        {openedProject.kind === 'main' ? '과제 설명' : '기획 의도'}
                       </p>
                       <ul className="space-y-2">
                         {toList(openedProject.detail).map((line, idx) => (
@@ -473,7 +473,7 @@ function Projects() {
                       </ul>
                     </div>
                     <div>
-                      <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">적용 기술</p>
+                      <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">활용 기술</p>
                       <div className="flex flex-wrap gap-2">
                         {openedProject.tags.map((t) => (
                           <span
