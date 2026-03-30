@@ -135,6 +135,28 @@ export const mainProjects: Project[] = [
 
 export const sideProjects: Project[] = [
   {
+    id: "theranote-agent",
+    kind: "side",
+    name: "물리치료 기록 관리 Vertical Agent PoC",
+    org: "개인",
+    period: "2026.02. - 2026.02.",
+    summary: ["물리치료 기록 조회·요약·제안 AI 코파일럿 개발"],
+    detail: ["물리치료사가 매 치료마다 반복되는 이전 기록 확인·처방 파악·기록 작성 과정을 자연어 질의로 대체하는 클리닉 특화 AI 코파일럿 개발"],
+    contributions: [
+      "LangGraph 3-노드 파이프라인(Orchestrator → Data Fetcher → Responder) 설계 및 17종 인텐트 분류 체계 구현",
+      "FastMCP 기반 Tool Server 구현. 치료 항목 설명 등 6개 도구를 Python 함수 직접 호출과 stdio MCP 서버 독립 실행 양방향 지원",
+      "인메모리 세션 스토어로 최근 6턴 대화 히스토리 및 선택 환자·날짜 컨텍스트 유지",
+      "화면 우측 슬라이딩 패널 UI 구현. 현재 선택 환자·페이지 정보를 자동 주입하여 컨텍스트 기반 응답 생성"
+  ],
+    tags: [
+      "React", "Vite", "React Router", "Tailwind CSS", "Supabase", "FastAPI", "LangGraph", "FastMCP", "OpenAI(GPT-4o-mini)"
+    ],
+    color: "accent",
+    previewImage: "/images/side-project/agent_sideproject2.png",
+    galleryImages: ["/images/side-project/agent_sideproject2.png", "/images/side-project/agent_sideproject.png"],
+    video: "/videos/agent_sideproject.mp4",
+  },
+  {
     id: "voice-collector",
     kind: "side",
     name: "TTS 학습용 음성데이터 수집 도구",
