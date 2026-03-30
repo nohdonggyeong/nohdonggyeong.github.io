@@ -190,7 +190,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2022.12. - 2023.01.",
     summary: ["권한 분리 기반 음성 수집·검수 라벨링 도구 개발"],
-    detail: ["TTS 모델 학습 데이터 확보를 위한 크라우드형 음성 수집·검수 서비스 개발 과제"],
+    detail: ["TTS 모델 학습 데이터 확보를 위한 크라우드형 음성 수집·검수 서비스 개발"],
     contributions: [
       "Spring Boot + JPA로 대본 등록·배정·녹음 제출·검수 워크플로 REST API 구현",
       "Spring Security로 관리자·수집자·검수자 역할 기반 접근 제어 및 인증·인가 처리",
@@ -210,7 +210,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2022.01. - 2022.02.",
     summary: ["계약직 인력 대상 연장근로·연차 그룹웨어 개발"],
-    detail: ["엑셀 중심 HR 관리 업무를 웹 기반 프로세스로 전환하기 위한 팀 단위 운영 플랫폼 개발 과제"],
+    detail: ["엑셀 중심 HR 관리 업무를 웹 기반 프로세스로 전환하기 위한 팀 단위 운영 플랫폼 개발"],
     contributions: [
       "Django ORM으로 일일 업무 기록·연장근로·휴가 신청 CRUD 및 관리자 승인 워크플로 API 구현",
       "Django 세션 기반 인증·인가 및 팀/역할별 접근 권한 제어 구현",
@@ -230,7 +230,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2021.09. - 2021.10.",
     summary: ["통합 워크샵 운영용 인물 퀴즈 애플리케이션 개발"],
-    detail: ["사내 워크샵 레크레이션 진행을 위한 참여형 퀴즈 앱 제작 과제"],
+    detail: ["사내 워크샵 레크레이션 진행을 위한 참여형 퀴즈 앱 제작"],
     contributions: [
       "PyQt5로 슬라이드쇼형 힌트 공개·정답 입력·점수 집계 GUI 화면 구현",
       "PyInstaller로 의존성 포함 단일 실행 파일(exe) 패키징 및 배포 패키지 제작",
@@ -248,7 +248,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2021.06. - 2021.07.",
     summary: ["사내 장비 수량·사용 현황 관리 서비스 개발"],
-    detail: ["엑셀 기반 장비 관리의 동기화 한계를 해소하기 위한 웹 기반 관리 서비스 구축 과제"],
+    detail: ["엑셀 기반 장비 관리의 동기화 한계를 해소하기 위한 웹 기반 관리 서비스 구축"],
     contributions: [
       "Django ORM + MariaDB로 장비 자산 등록·수정·삭제·조회 CRUD 및 사용자별 대여 현황 API 구현",
       "Django Admin 커스터마이징으로 장비 현황 관리 화면 구성",
@@ -267,7 +267,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2020.05. - 2020.06.",
     summary: ["Google STT 기반 일정·메모 안드로이드 앱 개발"],
-    detail: ["음성 입력을 통해 일정 및 메모를 등록·관리할 수 있는 모바일 애플리케이션 개발 과제"],
+    detail: ["음성 입력을 통해 일정 및 메모를 등록·관리할 수 있는 모바일 애플리케이션 개발"],
     contributions: [
       "Android SpeechRecognizer API로 음성 입력 실시간 텍스트 변환 및 일정·메모 등록 연동 구현",
       "SQLite로 일정·메모 데이터 로컬 CRUD 관리 및 RecyclerView 기반 목록 UI 구현",
@@ -285,7 +285,7 @@ export const sideProjects: Project[] = [
     org: "개인",
     period: "2020.06. - 2020.06.",
     summary: ["IT 직무 지원용 개인 웹 포트폴리오 구축"],
-    detail: ["초기 커리어 역량과 프로젝트 경험을 구조화해 제시하는 정적 웹 포트폴리오 제작 과제"],
+    detail: ["초기 커리어 역량과 프로젝트 경험을 구조화해 제시하는 정적 웹 포트폴리오 제작"],
     contributions: [
       "HTML/CSS로 반응형 레이아웃 설계 및 섹션별 포트폴리오 페이지 구조 구현",
       "Vanilla JS로 스크롤 이벤트 기반 섹션 전환 애니메이션 및 인터랙션 구현",

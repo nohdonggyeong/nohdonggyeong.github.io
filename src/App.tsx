@@ -461,7 +461,7 @@ function Projects() {
                     </div>
                     <div>
                       <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                        {openedProject.kind === 'main' ? '담당 부분' : '구현 사항'}
+                        {openedProject.kind === 'main' ? '담당 사항' : '구현 사항'}
                       </p>
                       <ul className="space-y-2">
                         {toList(openedProject.contributions).map((line, idx) => (
