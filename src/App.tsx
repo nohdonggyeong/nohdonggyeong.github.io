@@ -217,7 +217,7 @@ function Hero() {
 
         {/* Typing */}
         <div className="font-mono text-base sm:text-xl md:text-2xl text-accent mb-12 md:mb-20 min-h-[3rem] md:min-h-[2rem]">
-          <TypingText texts={['서비스 분리 설계부터 API 구현, 배포 자동화까지', 'MSA 기반 플랫폼 시스템을 E2E로 개발합니다.', '확장 가능하고 안정적인 아키텍처를 지향합니다.']} />
+          <TypingText texts={['서비스 분리 설계, API 구현, 배포 자동화까지', 'MSA 기반 플랫폼 시스템을 E2E로 개발합니다.', '확장 가능하고 안정적인 아키텍처를 지향합니다.']} />
         </div>
 
         {/* CTA */}
@@ -235,9 +235,9 @@ function Hero() {
 function Projects() {
   const allProjects = [...mainProjects, ...sideProjects]
   const [openedProjectId, setOpenedProjectId] = useState<string | null>(null)
-  const [openedGallery, setOpenedGallery] = useState<{ images: string[]; index: number; title: string } | null>(null)
+  const [detailCarouselIndex, setDetailCarouselIndex] = useState(0)
   const closeButtonClass = 'inline-flex items-center justify-center clip-corner bg-accent text-bg font-display font-bold px-3 py-2 text-[11px] md:text-xs tracking-wide leading-none border border-white/20 shadow-[0_0_16px_rgba(0,245,212,0.38)] hover:brightness-110 transition-all duration-200'
-  const galleryNavButtonClass = 'clip-corner bg-accent text-bg font-display font-bold px-2.5 py-1 text-[9px] md:text-[10px] tracking-wide border border-white/20 shadow-[0_0_10px_rgba(0,245,212,0.3)] hover:brightness-110 transition-all duration-200'
+  const carouselNavButtonClass = 'clip-corner bg-accent text-bg font-display font-bold px-2.5 py-1 text-[9px] md:text-[10px] tracking-wide border border-white/20 shadow-[0_0_10px_rgba(0,245,212,0.3)] hover:brightness-110 transition-all duration-200'
   const toList = (value: string | string[]) => (Array.isArray(value) ? value : [value])
   const renderTextWithLinks = (text: string) => {
     const nodes: React.ReactNode[] = []
@@ -305,7 +305,7 @@ function Projects() {
 
   useEffect(() => {
     const body = document.body
-    if (openedProjectId || openedGallery) {
+    if (openedProjectId) {
       body.style.overflow = 'hidden'
     } else {
       body.style.overflow = ''
@@ -313,35 +313,45 @@ function Projects() {
     return () => {
       body.style.overflow = ''
     }
-  }, [openedProjectId, openedGallery])
+  }, [openedProjectId])
 
   useEffect(() => {
-    const onEsc = (e: KeyboardEvent) => {
-      if (e.key === 'Escape' && openedGallery) {
-        setOpenedGallery(null)
-        return
-      }
-      if (e.key === 'ArrowLeft' && openedGallery && openedGallery.images.length > 1) {
-        setOpenedGallery({
-          ...openedGallery,
-          index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
-        })
-        return
-      }
-      if (e.key === 'ArrowRight' && openedGallery && openedGallery.images.length > 1) {
-        setOpenedGallery({
-          ...openedGallery,
-          index: (openedGallery.index + 1) % openedGallery.images.length,
-        })
-        return
-      }
+    const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape' && openedProjectId) {
         closeModal()
+        return
+      }
+      if (openedProjectId) {
+        const proj = allProjects.find((p) => p.id === openedProjectId)
+        if (proj) {
+          const carouselLen =
+            (proj.galleryImages?.length || 0) +
+            (proj.kind === 'main' && proj.architectureImage ? 1 : 0) +
+            (proj.kind === 'side' && proj.video ? 1 : 0)
+          if (carouselLen > 1) {
+            if (e.key === 'ArrowLeft') {
+              setDetailCarouselIndex(i => (i - 1 + carouselLen) % carouselLen)
+            } else if (e.key === 'ArrowRight') {
+              setDetailCarouselIndex(i => (i + 1) % carouselLen)
+            }
+          }
+        }
       }
     }
-    window.addEventListener('keydown', onEsc)
-    return () => window.removeEventListener('keydown', onEsc)
-  }, [openedProjectId, openedGallery])
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [openedProjectId, allProjects])
+
+  useEffect(() => {
+    if (!openedProjectId) return
+    const proj = allProjects.find(p => p.id === openedProjectId)
+    if (!proj) return
+    const srcs = [
+      ...(proj.galleryImages || []),
+      ...(proj.kind === 'main' && proj.architectureImage ? [proj.architectureImage] : []),
+    ]
+    srcs.forEach(src => { new Image().src = src })
+  }, [openedProjectId, allProjects])
 
   const setProjectInUrl = (id: string | null) => {
     const url = new URL(window.location.href)
@@ -356,6 +366,7 @@ function Projects() {
   const openModal = (id: string) => {
     setOpenedProjectId(id)
     setProjectInUrl(id)
+    setDetailCarouselIndex(0)
   }
 
   const closeModal = () => {
@@ -364,7 +375,6 @@ function Projects() {
   }
 
   const openedProject = allProjects.find((p) => p.id === openedProjectId) ?? null
-  const openedGalleryImage = openedGallery ? openedGallery.images[openedGallery.index] : null
 
   const ProjectSection = ({ id, n, title, projects }: { id: string; n: string; title: string; projects: Project[] }) => (
     <div id={id} className="mb-20 last:mb-0 scroll-mt-24 md:scroll-mt-28">
@@ -398,24 +408,11 @@ function Projects() {
             </ul>
             <p className="font-mono text-xs text-accent mb-2">주요 화면</p>
             <div className="clip-corner-sm border border-surface-2 bg-surface/70 p-2">
-              <button
-                type="button"
-                onClick={(e) => {
-                  e.stopPropagation()
-                  setOpenedGallery({
-                    images: p.galleryImages && p.galleryImages.length > 0 ? p.galleryImages : [p.previewImage],
-                    index: 0,
-                    title: p.name,
-                  })
-                }}
-                className="block w-full"
-              >
-                <img
-                  src={p.previewImage}
-                  alt={`${p.name} 주요 화면`}
-                  className="w-full h-52 rounded-sm object-cover object-top hover:opacity-90 transition-opacity"
-                />
-              </button>
+              <img
+                src={p.previewImage}
+                alt={`${p.name} 주요 화면`}
+                className="w-full h-52 rounded-sm object-cover object-top"
+              />
             </div>
           </div>
         ))}
@@ -431,10 +428,10 @@ function Projects() {
 
         {openedProject && createPortal(
           <div className="fixed inset-0 z-[100]">
-            <button type="button" aria-label="모달 닫기 배경" className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" onClick={closeModal} />
-            <div className="relative z-10 h-full w-full overflow-y-auto">
+            <div className="absolute inset-0 bg-black/70 backdrop-blur-[1px]" />
+            <div className="relative z-10 h-full w-full overflow-y-auto" onClick={closeModal}>
               <div className="min-h-full grid place-items-center p-4">
-                <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto clip-corner border border-accent/30 bg-bg p-6 md:p-8">
+                <div className="w-full max-w-4xl max-h-[90vh] overflow-y-auto clip-corner border border-accent/30 bg-bg p-6 md:p-8" onClick={e => e.stopPropagation()}>
                   <div className="flex items-start justify-between gap-4 mb-6">
                     <div>
                       <h4 className="font-display font-bold text-xl text-text-primary mb-1">{openedProject.name}</h4>
@@ -448,7 +445,7 @@ function Projects() {
                   <div className="space-y-6">
                     <div>
                       <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                        {openedProject.kind === 'main' ? '과제 설명' : '기획 의도'}
+                        {openedProject.kind === 'main' ? '개발 배경' : '기획 배경'}
                       </p>
                       <ul className="space-y-2">
                         {toList(openedProject.detail).map((line, idx) => (
@@ -461,7 +458,7 @@ function Projects() {
                     </div>
                     <div>
                       <p className="inline-block mb-2 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                        {openedProject.kind === 'main' ? '담당 사항' : '구현 사항'}
+                        {openedProject.kind === 'main' ? '담당 역할' : '구현 사항'}
                       </p>
                       <ul className="space-y-2">
                         {toList(openedProject.contributions).map((line, idx) => (
@@ -491,36 +488,116 @@ function Projects() {
                       </div>
                     </div>
 
-                    {openedProject.kind === 'main' ? (
-                      <div>
-                        <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">참고 도식</p>
-                        <img src={openedProject.architectureImage} alt={`${openedProject.name} architecture`} className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain" />
-                      </div>
-                    ) : (
-                      <div>
-                        <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                          {openedProject.demoUrl ? '포트폴리오 접속' : '시연 영상'}
-                        </p>
-                        {openedProject.demoUrl ? (
-                          <a
-                            href={openedProject.demoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="mt-1 block font-mono text-sm text-accent hover:underline leading-tight"
-                          >
-                            portfolio_ver1.html
-                          </a>
-                        ) : openedProject.video ? (
-                          <video controls className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain">
-                            <source src={openedProject.video} type="video/mp4" />
-                          </video>
-                        ) : (
-                          <div className="w-full h-[360px] rounded-md border border-surface-2 bg-surface flex items-center justify-center text-sm text-text-secondary">
-                            시연 영상이 없습니다.
+                    {(() => {
+                      // demoUrl 케이스: 링크 + 이미지 캐로셀 별도 렌더
+                      if (openedProject.kind === 'side' && openedProject.demoUrl) {
+                        const galleryImages = openedProject.galleryImages || []
+                        return (
+                          <div>
+                            <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
+                              주요 화면 / 포트폴리오 접속
+                            </p>
+                            {galleryImages.length > 0 && (
+                              <div className="relative">
+                                <img
+                                  src={galleryImages[detailCarouselIndex % galleryImages.length]}
+                                  alt={`${openedProject.name} 이미지 ${detailCarouselIndex + 1}`}
+                                  className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain"
+                                />
+                                {galleryImages.length > 1 && (
+                                  <>
+                                    <button
+                                      type="button"
+                                      onClick={() => setDetailCarouselIndex(i => (i - 1 + galleryImages.length) % galleryImages.length)}
+                                      className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 ${carouselNavButtonClass}`}
+                                    >
+                                      PREV
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={() => setDetailCarouselIndex(i => (i + 1) % galleryImages.length)}
+                                      className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 ${carouselNavButtonClass}`}
+                                    >
+                                      NEXT
+                                    </button>
+                                    <p className="absolute bottom-2 left-1/2 -translate-x-1/2 font-mono text-xs text-text-secondary bg-bg/70 px-2 py-0.5 rounded-sm">
+                                      {(detailCarouselIndex % galleryImages.length) + 1} / {galleryImages.length}
+                                    </p>
+                                  </>
+                                )}
+                              </div>
+                            )}
+                            <a
+                              href={openedProject.demoUrl}
+                              target="_blank"
+                              rel="noreferrer"
+                              className="mt-4 mb-4 block font-mono text-sm text-accent hover:underline leading-tight"
+                            >
+                              portfolio_ver1.html
+                            </a>
                           </div>
-                        )}
-                      </div>
-                    )}
+                        )
+                      }
+
+                      // 일반 캐로셀 케이스 (main 또는 side with video)
+                      type CarouselItem = { type: 'image'; src: string } | { type: 'video'; src: string }
+                      const carouselItems: CarouselItem[] = [
+                        ...(openedProject.galleryImages || []).map(src => ({ type: 'image' as const, src })),
+                        ...(openedProject.kind === 'main' && openedProject.architectureImage
+                          ? [{ type: 'image' as const, src: openedProject.architectureImage }]
+                          : []),
+                        ...(openedProject.kind === 'side' && openedProject.video
+                          ? [{ type: 'video' as const, src: openedProject.video }]
+                          : []),
+                      ]
+                      const hasImages = carouselItems.some(i => i.type === 'image')
+                      const hasVideo = carouselItems.some(i => i.type === 'video')
+                      const label = openedProject.kind === 'main'
+                        ? '주요 화면 / 구조 도식'
+                        : hasImages && hasVideo ? '주요 화면 / 시연 영상' : hasVideo ? '시연 영상' : '주요 화면'
+                      const currentItem = carouselItems[detailCarouselIndex]
+                      return carouselItems.length > 0 ? (
+                        <div>
+                          <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
+                            {label}
+                          </p>
+                          <div className="relative">
+                            {currentItem.type === 'image' ? (
+                              <img
+                                src={currentItem.src}
+                                alt={`${openedProject.name} 이미지 ${detailCarouselIndex + 1}`}
+                                className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain"
+                              />
+                            ) : (
+                              <video controls className="w-full h-[360px] rounded-md border border-surface-2 bg-surface object-contain">
+                                <source src={currentItem.src} type="video/mp4" />
+                              </video>
+                            )}
+                            {carouselItems.length > 1 && (
+                              <>
+                                <button
+                                  type="button"
+                                  onClick={() => setDetailCarouselIndex(i => (i - 1 + carouselItems.length) % carouselItems.length)}
+                                  className={`absolute left-2 top-1/2 -translate-y-1/2 z-10 ${carouselNavButtonClass}`}
+                                >
+                                  PREV
+                                </button>
+                                <button
+                                  type="button"
+                                  onClick={() => setDetailCarouselIndex(i => (i + 1) % carouselItems.length)}
+                                  className={`absolute right-2 top-1/2 -translate-y-1/2 z-10 ${carouselNavButtonClass}`}
+                                >
+                                  NEXT
+                                </button>
+                                <p className="absolute bottom-2 left-1/2 -translate-x-1/2 font-mono text-xs text-text-secondary bg-bg/70 px-2 py-0.5 rounded-sm">
+                                  {detailCarouselIndex + 1} / {carouselItems.length}
+                                </p>
+                              </>
+                            )}
+                          </div>
+                        </div>
+                      ) : null
+                    })()}
                   </div>
                 </div>
               </div>
@@ -529,64 +606,6 @@ function Projects() {
           document.body
         )}
 
-        {openedGallery && openedGalleryImage && createPortal(
-          <div className="fixed inset-0 z-[110]">
-            <button
-              type="button"
-              aria-label="이미지 닫기 배경"
-              className="absolute inset-0 bg-black/85"
-              onClick={() => setOpenedGallery(null)}
-            />
-            <div className="relative z-10 h-full w-full p-4 md:p-8 grid place-items-center">
-              <button
-                type="button"
-                onClick={() => setOpenedGallery(null)}
-                className={`absolute top-4 right-4 md:top-8 md:right-8 z-20 ${closeButtonClass}`}
-              >
-                CLOSE
-              </button>
-              {openedGallery.images.length > 1 && (
-                <>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setOpenedGallery({
-                        ...openedGallery,
-                        index: (openedGallery.index - 1 + openedGallery.images.length) % openedGallery.images.length,
-                      })
-                    }
-                    className={`absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 ${galleryNavButtonClass}`}
-                  >
-                    PREV
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() =>
-                      setOpenedGallery({
-                        ...openedGallery,
-                        index: (openedGallery.index + 1) % openedGallery.images.length,
-                      })
-                    }
-                    className={`absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 ${galleryNavButtonClass}`}
-                  >
-                    NEXT
-                  </button>
-                </>
-              )}
-              <img
-                src={openedGalleryImage}
-                alt={`${openedGallery.title} 확대 이미지`}
-                className="max-w-[95vw] max-h-[90vh] object-contain rounded-md border border-surface-2 bg-surface"
-              />
-              {openedGallery.images.length > 1 && (
-                <p className="absolute bottom-4 md:bottom-8 font-mono text-xs text-text-secondary">
-                  {openedGallery.index + 1} / {openedGallery.images.length}
-                </p>
-              )}
-            </div>
-          </div>,
-          document.body
-        )}
       </div>
     </Section>
   )

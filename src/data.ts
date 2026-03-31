@@ -136,7 +136,7 @@ export const mainProjects: Project[] = [
     tags: ["Python", "TTS(Tacotron2)", "STT", "CentOS", "Ubuntu"],
     color: "accent",
     previewImage: "/images/joined-project/prototype20_4.jpg",
-    galleryImages: ["/images/joined-project/prototype20_4.jpg", "/images/joined-project/prototype20_5.jpg"],
+    galleryImages: ["/images/joined-project/prototype20_4.jpg"],
     architectureImage: "/images/joined-project/prototype20_3.png",
   },
   {
