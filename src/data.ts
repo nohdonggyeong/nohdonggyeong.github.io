@@ -29,13 +29,13 @@ export const mainProjects: Project[] = [
     name: "삼성SDS - FabriX 개발 프로젝트",
     org: "에스코어",
     period: "2025.01. - 2025.12.",
-    summary: ["AI 에이전트 플랫폼 스토어 서비스 백엔드 구축", "에이전트 스토어 REST API 설계·구현"],
+    summary: ["AI 에이전트 플랫폼 스토어 서비스 백엔드 구축", "에이전트 스토어 RESTful API 설계·구현"],
     detail: ["삼성SDS AI 풀스택 오퍼링 중 AI 플랫폼(FabriX) 내 에이전트 스토어 도메인의 서비스 개발·운영 고도화 과제"],
     contributions: [
       "FastAPI + SQLAlchemy ORM 기반 에이전트 스토어 도메인 REST API 설계·구현 및 PostgreSQL 스키마 관리",
       "Helm Chart 구성 및 ArgoCD GitOps 파이프라인 연동으로 Kubernetes 배포 환경 구성·운영",
       "Jenkins CI 파이프라인 유지보수 및 서비스 운영 장애 대응",
-      "[키워드·벡터 결합 하이브리드 검색 구조 적용 검토 및 성능 비교 분석, 관련 기고](https://s-core.co.kr/insight/view/%EB%8D%94-%EC%A0%95%ED%99%95%ED%95%98%EA%B3%A0-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C-%EC%B0%BE%EB%8A%94-%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EB%93%9C-%EA%B2%80%EC%83%89-llm%EC%9D%98-%ED%99%95/)",
+      "키워드·벡터 결합 하이브리드 검색 구조 적용 검토 및 성능 비교 분석 관련 기고 [; Insight Report 링크](https://s-core.co.kr/insight/view/%EB%8D%94-%EC%A0%95%ED%99%95%ED%95%98%EA%B3%A0-%EC%9C%A0%EC%97%B0%ED%95%98%EA%B2%8C-%EC%B0%BE%EB%8A%94-%ED%95%98%EC%9D%B4%EB%B8%8C%EB%A6%AC%EB%93%9C-%EA%B2%80%EC%83%89-llm%EC%9D%98-%ED%99%95/)",
     ],
     tags: ["FastAPI", "Python", "SQLAlchemy", "PostgreSQL", "Kubernetes", "ArgoCD", "Jenkins", "Helm"],
     color: "accent",
@@ -49,7 +49,7 @@ export const mainProjects: Project[] = [
     name: "삼성SDS - GraviX 개발 프로젝트",
     org: "에스코어",
     period: "2023.04. - 2024.12.",
-    summary: ["멀티 테넌트 카탈로그 서비스 백엔드 설계·구현", "카탈로그 REST API 구현 및 DB 마이그레이션 관리"],
+    summary: ["멀티 테넌트 카탈로그 서비스 백엔드 설계·구현", "카탈로그 RESTful API 설계·구현"],
     detail: ["(현, FabriX) 기업 내 데이터·소프트웨어·애플리케이션 자산의 통합 관리와 탐색 효율 개선을 목표로 한 카탈로그 플랫폼 개발 과제"],
     contributions: [
       "Spring Boot + JPA/QueryDSL로 멀티 테넌트 카탈로그 도메인 REST API 구현, Flyway 기반 DB 마이그레이션 관리",
@@ -164,7 +164,7 @@ export const sideProjects: Project[] = [
   {
     id: "theranote-agent",
     kind: "side",
-    name: "물리치료 기록 관리 Vertical Agent PoC",
+    name: "물리치료 업무 관리 AI 코파일럿",
     org: "개인",
     period: "2026.02. - 2026.02.",
     summary: ["물리치료 기록 조회·요약·제안 AI 코파일럿 개발"],
@@ -186,7 +186,7 @@ export const sideProjects: Project[] = [
   {
     id: "voice-collector",
     kind: "side",
-    name: "TTS 학습용 음성데이터 수집 도구",
+    name: "TTS 모델 학습용 음성 데이터 수집 도구",
     org: "개인",
     period: "2022.12. - 2023.01.",
     summary: ["권한 분리 기반 음성 수집·검수 라벨링 도구 개발"],
@@ -206,11 +206,11 @@ export const sideProjects: Project[] = [
   {
     id: "nicework-hr-platform",
     kind: "side",
-    name: "팀 HR관리 그룹웨어 플랫폼",
+    name: "사내 근태·연차 관리 플랫폼",
     org: "개인",
     period: "2022.01. - 2022.02.",
-    summary: ["계약직 인력 대상 연장근로·연차 그룹웨어 개발"],
-    detail: ["엑셀 중심 HR 관리 업무를 웹 기반 프로세스로 전환하기 위한 팀 단위 운영 플랫폼 개발"],
+    summary: ["계약직 인력 대상 연장근로·연차 관리 플랫폼 개발"],
+    detail: ["엑셀 중심 근태·연차 관리 업무를 웹 기반 프로세스로 전환하기 위한 팀 단위 운영 플랫폼 개발"],
     contributions: [
       "Django ORM으로 일일 업무 기록·연장근로·휴가 신청 CRUD 및 관리자 승인 워크플로 API 구현",
       "Django 세션 기반 인증·인가 및 팀/역할별 접근 권한 제어 구현",
@@ -229,7 +229,7 @@ export const sideProjects: Project[] = [
     name: "레크레이션 인물 퀴즈 앱",
     org: "개인",
     period: "2021.09. - 2021.10.",
-    summary: ["통합 워크샵 운영용 인물 퀴즈 애플리케이션 개발"],
+    summary: ["워크샵 레크레이션용 인물 퀴즈 애플리케이션 개발"],
     detail: ["사내 워크샵 레크레이션 진행을 위한 참여형 퀴즈 앱 제작"],
     contributions: [
       "PyQt5로 슬라이드쇼형 힌트 공개·정답 입력·점수 집계 GUI 화면 구현",
@@ -244,10 +244,10 @@ export const sideProjects: Project[] = [
   {
     id: "equipment-management",
     kind: "side",
-    name: "회사 장비 관리 플랫폼",
+    name: "사내 장비 관리 플랫폼",
     org: "개인",
     period: "2021.06. - 2021.07.",
-    summary: ["사내 장비 수량·사용 현황 관리 서비스 개발"],
+    summary: ["회사 장비 수량·사용 현황 관리 서비스 개발"],
     detail: ["엑셀 기반 장비 관리의 동기화 한계를 해소하기 위한 웹 기반 관리 서비스 구축"],
     contributions: [
       "Django ORM + MariaDB로 장비 자산 등록·수정·삭제·조회 CRUD 및 사용자별 대여 현황 API 구현",
@@ -263,7 +263,7 @@ export const sideProjects: Project[] = [
   {
     id: "say-list",
     kind: "side",
-    name: "Say List",
+    name: "STT 기반 메모 앱",
     org: "개인",
     period: "2020.05. - 2020.06.",
     summary: ["Google STT 기반 일정·메모 안드로이드 앱 개발"],
@@ -281,10 +281,10 @@ export const sideProjects: Project[] = [
   {
     id: "first-web-portfolio",
     kind: "side",
-    name: "My First Web Portfolio",
+    name: "신입 개발자 포트폴리오",
     org: "개인",
     period: "2020.06. - 2020.06.",
-    summary: ["IT 직무 지원용 개인 웹 포트폴리오 구축"],
+    summary: ["풀스택 웹 개발자로 포트폴리오 제작"],
     detail: ["초기 커리어 역량과 프로젝트 경험을 구조화해 제시하는 정적 웹 포트폴리오 제작"],
     contributions: [
       "HTML/CSS로 반응형 레이아웃 설계 및 섹션별 포트폴리오 페이지 구조 구현",

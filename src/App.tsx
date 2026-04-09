@@ -495,7 +495,7 @@ function Projects() {
                         return (
                           <div>
                             <p className="inline-block mb-3 font-mono text-xs px-2 py-0.5 rounded-sm border border-accent/30 bg-accent/10 text-accent">
-                              주요 화면 / 포트폴리오 접속
+                              주요 화면 / 상세 보기
                             </p>
                             {galleryImages.length > 0 && (
                               <div className="relative">
@@ -533,7 +533,7 @@ function Projects() {
                               rel="noreferrer"
                               className="mt-4 mb-4 block font-mono text-sm text-accent hover:underline leading-tight"
                             >
-                              portfolio_ver1.html
+                              [ portfolio_v1 링크 ]
                             </a>
                           </div>
                         )
