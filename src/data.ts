@@ -106,10 +106,10 @@ export const mainProjects: Project[] = [
     name: "NIA - 2021 AI 학습용 데이터 구축 지원사업",
     org: "솔트룩스이노베이션",
     period: "2021.05. - 2021.12.",
-    summary: ["차량 내·외부 상황 인식 데이터 수집 플랫폼 구축", "영상 업로드·저장·조회 백엔드 API 구현"],
+    summary: ["차량 내·외부 상황 인식 데이터 수집 플랫폼 구축", "영상 업로드·저장·조회 API 구현"],
     detail: ["운전자 제스처 인식 모델 학습을 위한 영상 데이터 수집·저작·검수 체계 구축 과제"],
     contributions: [
-      "Django REST API로 영상 파일 업로드·저장·조회 백엔드 구현, MariaDB 스키마 설계",
+      "Django REST API로 영상 파일 업로드·저장·조회 구현, MariaDB 스키마 설계",
       "MediaPipe Hands 연동 제스처 인식 데이터 저작·검수 워크플로 구현",
       "Vanilla JS로 영상 프레임 탐색·구간 선택·라벨링 인터페이스 구현",
       "Nginx + Gunicorn + Docker-compose 기반 배포 환경 구성 및 운영 유지보수",

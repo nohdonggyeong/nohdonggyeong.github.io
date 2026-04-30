@@ -207,7 +207,7 @@ function Hero() {
       <div className="relative z-10 text-center px-6 max-w-5xl mx-auto">
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 mb-8 md:mb-16 clip-corner-sm border border-accent/30 bg-accent/5 px-3 py-1.5 md:px-4 md:py-2">
-          <span className="font-mono text-accent text-xs md:text-sm">Backend Engineer | MSA • Platform Systems</span>
+          <span className="font-mono text-accent text-xs md:text-sm">Software Engineer | MSA • Platform Systems</span>
         </div>
 
         {/* Name */}
